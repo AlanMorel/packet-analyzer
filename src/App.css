@@ -1,0 +1,49 @@
+:root {
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+.app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    max-width: 60rem;
+    margin: auto;
+}
+
+body {
+    background-color: #ffefef;
+    margin: 0;
+    padding-bottom: 15rem;
+    background-image: url("https://blog.multigamecard.com/wp-content/uploads/2018/11/npc.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 50% auto;
+}
+
+h1 {
+    margin: 0 0 2rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    box-sizing: border-box;
+    padding: 0.25rem 0.5rem;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    outline: none;
+}

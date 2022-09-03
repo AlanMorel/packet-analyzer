@@ -1,0 +1,174 @@
+.packet-analyzer__input {
+    margin-bottom: 1rem;
+
+    textarea {
+        min-height: 7rem;
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+.packet-analyzer__output {
+    display: flex;
+
+    textarea {
+        min-height: 20rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        margin-bottom: 1rem;
+    }
+}
+
+.packet-analyzer__outputs {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.packet-analyzer__right-panel {
+    max-width: 16rem;
+}
+
+.packet-analyzer__slots,
+.packet-analyzer__packet-structures {
+    border: solid 1px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 1rem;
+}
+
+.packet-analyzer__packet-structures {
+    height: fit-content;
+}
+
+.packet-analyzer__slot-label {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    border-radius: 0.25rem;
+    border: solid 1px black;
+    padding: 0.1rem 0.25rem;
+    min-width: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+.packet-analyzer__structure {
+    display: flex;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.packet-analyzer__label {
+    outline: none;
+    font-size: 0.9rem;
+    background: none;
+    border-style: none;
+    padding: 0;
+}
+
+.packet-analyzer__buttons {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0.25rem;
+    flex-wrap: wrap;
+    border-top: solid 1px rgba(0, 0, 0, 0.25);
+    padding-top: 0.75rem;
+
+    button {
+        margin: 0.25rem 0.25rem;
+        border-style: none;
+        border-radius: 0.25rem;
+        border: solid 1px;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 0.8rem;
+        border-color: rgba(0, 0, 0, 0.5);
+        color: rgba(0, 0, 0, 0.75);
+
+        &:hover {
+            color: black;
+            border-color: black;
+        }
+    }
+}
+
+.packet-analyzer__unit {
+    font-weight: bold;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.25rem;
+    margin-right: 0.5rem;
+    min-width: 3.25rem;
+
+    &--opcode {
+        border: solid 1px rgb(255, 0, 0, 0.5);
+        color: #d64f4f;
+    }
+
+    &--byte {
+        border: solid 1px rgb(228 0 255 / 50%);
+        color: #c74fd6;
+    }
+
+    &--short {
+        border: solid 1px #673ab7;
+        color: #7d4fd6;
+    }
+
+    &--int {
+        border: solid 1px rgb(10 140 32 / 50%);
+        color: #16ab2f;
+    }
+
+    &--long {
+        border: solid 1px rgb(0 43 255 / 50%);
+        color: #514fd6;
+    }
+
+    &--ascii-str,
+    &--maple-str {
+        border: solid 1px rgb(255 129 0 / 50%);
+        color: #d6a64f;
+    }
+
+    &--coordsF,
+    &--coordsS {
+        border: solid 1px rgb(5 187 170 / 50%);
+        color: #339e9e;
+    }
+}
+
+.packet-analyzer__structure:hover .packet-analyer__options {
+    display: block;
+}
+
+.packet-analyer__options {
+    position: absolute;
+    right: 0;
+    display: none;
+}
+
+.packet-analyzer__option {
+    background: none;
+    border-style: none;
+    cursor: pointer;
+    border: solid 1px transparent;
+
+    &:hover {
+        border-color: black;
+        border-radius: 0.25rem;
+    }
+}
+
+.packet-analyzer__json {
+    width: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+    outline: none;
+}

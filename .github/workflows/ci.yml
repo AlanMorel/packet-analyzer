@@ -1,0 +1,17 @@
+name: Deploy latest
+
+on: [push]
+
+jobs:
+    deploy:
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy latest ${{ github.event.repository.name }}
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  key: ${{ secrets.KEY }}
+                  script_stop: true
+                  script: cd docker && ./deploy.sh ${{ github.event.repository.name }}

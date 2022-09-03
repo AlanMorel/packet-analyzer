@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+    packet_analyzer:
+        container_name: packet_analyzer
+        image: packet_analyzer
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+            args:
+                ENV: ${NODE_ENV}
+        volumes:
+            - ./logs:/var/log/nginx
+        environment:
+            DOCKER: "true"
+        expose:
+            - "${PORT}"
+        ports:
+            - "${PORT}:${PORT}"
+        networks:
+            - docker
+
+networks:
+    docker:
+        external: true
