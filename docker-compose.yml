@@ -17,8 +17,6 @@ services:
             DOCKER: "true"
         expose:
             - "${PORT}"
-        ports:
-            - "${PORT}:${PORT}"
         networks:
             - docker
 

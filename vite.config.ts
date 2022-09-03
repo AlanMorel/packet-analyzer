@@ -14,5 +14,6 @@ export default defineConfig({
     },
     server: {
         port: parseInt(process.env.PORT || "8087")
-    }
+    },
+    base: "/packet-analyzer"
 });

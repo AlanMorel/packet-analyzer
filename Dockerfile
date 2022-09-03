@@ -14,6 +14,6 @@ FROM nginx:alpine as base
 
 ARG ENV
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html/packet-analyzer
 
 COPY ./nginx/nginx.${ENV}.conf /etc/nginx/nginx.conf
