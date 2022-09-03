@@ -1,4 +1,4 @@
-import "@/src/App.css";
+import "@/src/App.scss";
 import logo from "@/src/assets/logo.png";
 import PacketAnalyzer from "@/src/components/packet-analyzer/PacketAnalyzer";
 

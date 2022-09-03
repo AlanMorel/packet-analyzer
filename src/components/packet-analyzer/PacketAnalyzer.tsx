@@ -1,4 +1,3 @@
-import "@/src/App.css";
 import "@/src/components/packet-analyzer/PacketAnalyzer.scss";
 import { defaultPacket, defaultStructure } from "@/src/utils/Defaults";
 import { Slot, Structure } from "@/src/utils/Interfaces";
