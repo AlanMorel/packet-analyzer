@@ -1,6 +1,6 @@
 import "@/src/components/packet-analyzer/PacketAnalyzer.scss";
 import { defaultPacket, defaultStructure } from "@/src/utils/Defaults";
-import { Slot, Structure } from "@/src/utils/Interfaces";
+import { Slot, Structure, UnitTypes } from "@/src/utils/Interfaces";
 import { parsePacket } from "@/src/utils/PacketUtils";
 import { useMemo, useState } from "react";
 
@@ -26,7 +26,7 @@ function PacketAnalyzer() {
     const [structure, setStructure] = useState(defaultStructure);
     const [slots, setSlots] = useState(getSlots());
 
-    const addStructure = (unit: string, label: string | undefined = undefined) => {
+    const addStructure = (unit: UnitTypes, label: string | undefined = undefined) => {
         const newValue: Structure = {
             unit: unit,
             label: label ?? "unk " + unit
@@ -135,7 +135,7 @@ function PacketAnalyzer() {
                             <div className="packet-analyzer__structure" key={index}>
                                 <div
                                     className={`packet-analyzer__unit ${
-                                        "packet-analyzer__unit--" + struct.unit.replace(/\s+/g, "-")
+                                        "packet-analyzer__unit--" + struct.unit.toLowerCase().replace(/\s+/g, "-")
                                     }`}
                                 >
                                     {struct.unit}
@@ -146,7 +146,7 @@ function PacketAnalyzer() {
                                     value={struct.label}
                                     onInput={event => onLabelRename(event, index)}
                                 />
-                                <div className="packet-analyer__options">
+                                <div className="packet-analyzer__options">
                                     <button
                                         className="packet-analyzer__option"
                                         onClick={() => moveStructure(index, -1)}
@@ -167,9 +167,11 @@ function PacketAnalyzer() {
                             <button onClick={() => addStructure("byte")}>+ Byte</button>
                             <button onClick={() => addStructure("short")}>+ Short</button>
                             <button onClick={() => addStructure("int")}>+ Int</button>
+                            <button onClick={() => addStructure("float")}>+ Float</button>
                             <button onClick={() => addStructure("long")}>+ Long</button>
-                            <button onClick={() => addStructure("ascii str")}>+ Ascii String</button>
-                            <button onClick={() => addStructure("maple str")}>+ Maple String</button>
+                            <button onClick={() => addStructure("asciiStr")}>+ Ascii String</button>
+                            <button onClick={() => addStructure("mapleStr")}>+ Maple String</button>
+                            <button onClick={() => addStructure("coordsB")}>+ Coords B</button>
                             <button onClick={() => addStructure("coordsS")}>+ Coords S</button>
                             <button onClick={() => addStructure("coordsF")}>+ Coords F</button>
                         </div>
@@ -192,7 +194,7 @@ function PacketAnalyzer() {
                                     value={slot.label}
                                     onInput={event => onSlotRename(event, index)}
                                 />
-                                <div className="packet-analyer__options">
+                                <div className="packet-analyzer__options">
                                     <button className="packet-analyzer__option" onClick={() => loadSlot(index)}>
                                         Load
                                     </button>

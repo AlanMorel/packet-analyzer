@@ -17,7 +17,7 @@ export const defaultStructure: Structure[] = [
         label: "character id"
     },
     {
-        unit: "ascii str",
+        unit: "asciiStr",
         label: "character name"
     },
     {
@@ -25,7 +25,7 @@ export const defaultStructure: Structure[] = [
         label: "unk byte"
     },
     {
-        unit: "ascii str",
+        unit: "asciiStr",
         label: "message"
     },
     {

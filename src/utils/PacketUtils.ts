@@ -14,6 +14,22 @@ export const bigEndianHexStringToDecimal = (hex: string) => {
     return ((decimal & 0xff) << 8) | ((decimal >> 8) & 0xff);
 };
 
+export const IntToFloat32 = (int: number) => {
+    if (int > 0 || int < 0) {
+        const sign = int >>> 31 ? -1 : 1;
+        let exp = ((int >>> 23) & 0xff) - 127;
+        const mantissa = ((int & 0x7fffff) + 0x800000).toString(2);
+        let float32 = 0;
+        for (let i = 0; i < mantissa.length; i += 1) {
+            float32 += parseInt(mantissa[i]) ? Math.pow(2, exp) : 0;
+            exp--;
+        }
+        return float32 * sign;
+    }
+
+    return 0;
+};
+
 export const hex2a = (hex: string) => {
     let str = "";
     for (let i = 0; i < hex.length; i += 2) {
@@ -43,11 +59,11 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
             size = 1;
         } else if (struct.unit === "short" || struct.unit === "opcode") {
             size = 2;
-        } else if (struct.unit === "int") {
+        } else if (struct.unit === "int" || struct.unit === "float") {
             size = 4;
         } else if (struct.unit === "long") {
             size = 8;
-        } else if (struct.unit === "ascii str") {
+        } else if (struct.unit === "asciiStr") {
             size = 2;
 
             if (index + size * 2 > packet.length) {
@@ -56,7 +72,7 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
 
             const rawSize = packet.slice(index, index + size * 2);
             size += littleEndianHexStringToDecimal(rawSize) * 2;
-        } else if (struct.unit === "maple str") {
+        } else if (struct.unit === "mapleStr") {
             size = 2;
 
             if (index + size > packet.length) {
@@ -69,6 +85,8 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
             size = 12;
         } else if (struct.unit === "coordsS") {
             size = 6;
+        } else if (struct.unit === "coordsB") {
+            size = 3;
         }
 
         if (index + size * 2 > packet.length) {
@@ -78,16 +96,25 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
         const rawPacket = packet.slice(index, index + size * 2);
 
         let value = "";
-        if (struct.unit === "ascii str" || struct.unit === "maple str") {
+        if (struct.unit === "asciiStr" || struct.unit === "mapleStr") {
             value = hex2a(rawPacket.substring(4));
         } else if (struct.unit === "coordsF") {
-            value += "X:" + bigEndianHexStringToDecimal(rawPacket.substring(0, 8));
-            value += " Y:" + bigEndianHexStringToDecimal(rawPacket.substring(8, 16));
-            value += " Z:" + bigEndianHexStringToDecimal(rawPacket.substring(16, 24));
+            const x = IntToFloat32(littleEndianHexStringToDecimal(rawPacket.substring(0, 8)));
+            const y = IntToFloat32(littleEndianHexStringToDecimal(rawPacket.substring(8, 16)));
+            const z = IntToFloat32(littleEndianHexStringToDecimal(rawPacket.substring(16, 24)));
+            value = `X:${x} Y:${y} Z:${z}`;
         } else if (struct.unit === "coordsS") {
-            value += "X:" + bigEndianHexStringToDecimal(rawPacket.substring(0, 4));
-            value += " Y:" + bigEndianHexStringToDecimal(rawPacket.substring(4, 8));
-            value += " Z:" + bigEndianHexStringToDecimal(rawPacket.substring(8, 12));
+            const x = bigEndianHexStringToDecimal(rawPacket.substring(0, 4));
+            const y = bigEndianHexStringToDecimal(rawPacket.substring(4, 8));
+            const z = bigEndianHexStringToDecimal(rawPacket.substring(8, 12));
+            value = `X:${x} Y:${y} Z:${z}`;
+        } else if (struct.unit === "coordsB") {
+            const x = bigEndianHexStringToDecimal(rawPacket.substring(0, 2));
+            const y = bigEndianHexStringToDecimal(rawPacket.substring(2, 4));
+            const z = bigEndianHexStringToDecimal(rawPacket.substring(4, 6));
+            value = `X:${x} Y:${y} Z:${z}`;
+        } else if (struct.unit === "float") {
+            value = IntToFloat32(littleEndianHexStringToDecimal(rawPacket)).toString();
         } else {
             const decimal = littleEndianHexStringToDecimal(rawPacket);
             value = decimal + " (0x" + decimal.toString(16).toUpperCase() + ")";

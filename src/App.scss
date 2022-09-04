@@ -51,3 +51,20 @@ input,
 textarea {
     color: rgba(0, 0, 0, 0.9);
 }
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+
+    body {
+        color: white;
+        background: #3d0000;
+    }
+
+    .app,
+    input,
+    textarea {
+        color: white;
+    }
+}
