@@ -54,8 +54,6 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
     let results = "";
     let index = 0;
     for (const struct of structure) {
-        console.log(struct.unit);
-
         let size = 0;
         if (struct.unit === "byte") {
             size = 1;
@@ -121,7 +119,6 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
             const decimal = littleEndianHexStringToDecimal(rawPacket);
             value = decimal + " (0x" + decimal.toString(16).toUpperCase() + ")";
         }
-        console.log(value);
 
         results += addSpacesToPacket(rawPacket) + " // " + struct.label + ": " + value + "\n";
         index += size * 2;
