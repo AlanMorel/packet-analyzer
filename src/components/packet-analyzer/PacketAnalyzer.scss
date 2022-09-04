@@ -49,13 +49,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .packet-analyzer__input {
-        textarea {
-            color: white;
-            background-color: #1e1314;
-        }
-    }
-
     .packet-analyzer__slots,
     .packet-analyzer__packet-structures {
         background-color: #1e1314;

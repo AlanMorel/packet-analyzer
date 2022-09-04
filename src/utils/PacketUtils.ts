@@ -1,6 +1,6 @@
 import { Structure } from "@/src/utils/Interfaces";
 
-export const littleEndianHexStringToDecimal = (string: string) => {
+export const littleEndianHexStringToDecimal = (string: string): number => {
     const len = string.length;
     let bigEndianHexString = "0x";
     for (let i = 0; i < len / 2; i++) {
@@ -9,12 +9,12 @@ export const littleEndianHexStringToDecimal = (string: string) => {
     return parseInt(bigEndianHexString);
 };
 
-export const bigEndianHexStringToDecimal = (hex: string) => {
+export const bigEndianHexStringToDecimal = (hex: string): number => {
     const decimal = littleEndianHexStringToDecimal(hex);
     return ((decimal & 0xff) << 8) | ((decimal >> 8) & 0xff);
 };
 
-export const IntToFloat32 = (int: number) => {
+export const IntToFloat32 = (int: number): number => {
     if (int > 0 || int < 0) {
         const sign = int >>> 31 ? -1 : 1;
         let exp = ((int >>> 23) & 0xff) - 127;
@@ -30,7 +30,7 @@ export const IntToFloat32 = (int: number) => {
     return 0;
 };
 
-export const hex2a = (hex: string) => {
+export const hex2a = (hex: string): string => {
     let str = "";
     for (let i = 0; i < hex.length; i += 2) {
         const v = parseInt(hex.substring(i, i + 2), 16);
@@ -49,7 +49,7 @@ export const addSpacesToPacket = (packet: string): string => {
     return "";
 };
 
-export const parsePacket = (packet: string, structure: Structure[]) => {
+export const parsePacket = (packet: string, structure: Structure[]): string => {
     packet = packet.replace(/\s/g, "");
     let results = "";
     let index = 0;
@@ -117,15 +117,15 @@ export const parsePacket = (packet: string, structure: Structure[]) => {
             value = IntToFloat32(littleEndianHexStringToDecimal(rawPacket)).toString();
         } else {
             const decimal = littleEndianHexStringToDecimal(rawPacket);
-            value = decimal + " (0x" + decimal.toString(16).toUpperCase() + ")";
+            value = `${decimal} (0x${decimal.toString(16).toUpperCase()})`;
         }
 
-        results += addSpacesToPacket(rawPacket) + " // " + struct.label + ": " + value + "\n";
+        results += `${addSpacesToPacket(rawPacket)} // ${struct.label}: ${value}\n`;
         index += size * 2;
     }
 
     if (index < packet.length) {
-        results += addSpacesToPacket(packet.substring(index)) + " // rest of the packet";
+        results += `${addSpacesToPacket(packet.substring(index))} // rest of the packet`;
     }
 
     return results;

@@ -1,5 +1,6 @@
 import { defaultStructure } from "@/src/utils/Defaults";
 import { Structure, UnitTypes } from "@/src/utils/Interfaces";
+import { FormEvent } from "react";
 import { atom, useRecoilState } from "recoil";
 
 const structureState = atom({
@@ -7,25 +8,25 @@ const structureState = atom({
     default: defaultStructure
 });
 
-export const useStructureState = () => {
+export const useStructureState = (): any => {
     const [structure, setStructure] = useRecoilState(structureState);
 
-    const addStructure = (unit: UnitTypes) => {
+    const addStructure = (unit: UnitTypes): void => {
         const newValue: Structure = {
             unit: unit,
-            label: "unk " + unit
+            label: `unk ${unit}`
         };
         const newStructure = [...structure, newValue];
         setStructure(newStructure);
     };
 
-    const deleteStructure = (index: number) => {
+    const deleteStructure = (index: number): void => {
         const newStructure = [...structure];
         newStructure.splice(index, 1);
         setStructure(newStructure);
     };
 
-    const onLabelRename = (event: React.FormEvent<EventTarget>, index: number) => {
+    const onLabelRename = (event: FormEvent<EventTarget>, index: number): void => {
         const target = event.target as HTMLInputElement;
         const label = target.value;
 
@@ -40,12 +41,12 @@ export const useStructureState = () => {
         setStructure(newStructureArray);
     };
 
-    const updateStructure = (event: React.FormEvent<EventTarget>) => {
+    const updateStructure = (event: FormEvent<EventTarget>): void => {
         const target = event.target as HTMLInputElement;
         const value = target.value;
         setStructure(JSON.parse(value));
     };
-    const moveStructure = (index: number, amount: number) => {
+    const moveStructure = (index: number, amount: number): void => {
         if (index + amount < 0 || index + amount >= structure.length) {
             return;
         }

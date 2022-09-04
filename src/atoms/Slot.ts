@@ -1,6 +1,7 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
 import { Slot } from "@/src/utils/Interfaces";
+import { FormEvent } from "react";
 import { atom, useRecoilState } from "recoil";
 
 const getSlots = (): Slot[] => {
@@ -9,7 +10,7 @@ const getSlots = (): Slot[] => {
         const slotsDefault = [];
         for (let i = 0; i < 10; i++) {
             slotsDefault.push({
-                label: "Slot " + (i + 1) + " Label",
+                label: `Slot ${i + 1} Label`,
                 input: "",
                 structure: []
             });
@@ -25,12 +26,12 @@ const slotState = atom({
     default: getSlots()
 });
 
-export const useSlotsState = () => {
+export const useSlotsState = (): any => {
     const [slots, setSlots] = useRecoilState(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
 
-    const loadSlot = (index: number) => {
+    const loadSlot = (index: number): void => {
         const slotsJSON = localStorage.getItem("slots") as string;
         const slotsData = JSON.parse(slotsJSON);
 
@@ -38,14 +39,13 @@ export const useSlotsState = () => {
         newSlots[index] = slotsData[index];
 
         setSlots(newSlots);
-
         setInput(newSlots[index].input);
         setStructure(newSlots[index].structure);
 
-        alert("Slot " + (index + 1) + " loaded.");
+        alert(`Slot ${index + 1} "${newSlots[index].label}" loaded.`);
     };
 
-    const saveSlot = (index: number) => {
+    const saveSlot = (index: number): void => {
         const newSlot = {
             label: slots[index].label,
             input: input,
@@ -58,10 +58,10 @@ export const useSlotsState = () => {
         const slotsJSON = JSON.stringify(newSlots);
         localStorage.setItem("slots", slotsJSON);
 
-        alert("Slot " + (index + 1) + " saved.");
+        alert(`Slot ${index + 1} saved.`);
     };
 
-    const renameSlot = (event: React.FormEvent<EventTarget>, index: number) => {
+    const renameSlot = (event: FormEvent<EventTarget>, index: number): void => {
         const target = event.target as HTMLInputElement;
         const label = target.value;
         const newSlots = [...slots];

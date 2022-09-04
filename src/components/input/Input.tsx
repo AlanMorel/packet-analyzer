@@ -1,8 +1,9 @@
 import { useInputState } from "@/src/atoms/Input";
+import { ReactElement } from "react";
 
 import "@/src/components/input/Input.scss";
 
-function Input() {
+function Input(): ReactElement {
     const { input, setInput } = useInputState();
 
     return (
@@ -11,7 +12,7 @@ function Input() {
                 placeholder="Enter packets, one on each line"
                 value={input}
                 wrap="off"
-                onChange={event => setInput(event.target.value)}
+                onChange={(event): void => setInput(event.target.value)}
             />
         </div>
     );

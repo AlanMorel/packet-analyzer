@@ -6,7 +6,7 @@ const inputState = atom({
     default: defaultPacket
 });
 
-export const useInputState = () => {
+export const useInputState = (): any => {
     const [input, setInput] = useRecoilState(inputState);
 
     return { input, setInput };

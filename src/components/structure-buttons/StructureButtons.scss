@@ -21,10 +21,8 @@
             color: black;
             border-color: black;
         }
-    }
 
-    @media (prefers-color-scheme: dark) {
-        button {
+        @media (prefers-color-scheme: dark) {
             color: white;
             border-color: rgba(255, 255, 255, 0.3);
         }

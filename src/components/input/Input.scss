@@ -4,5 +4,10 @@
     textarea {
         min-height: 7rem;
         background-color: rgba(255, 255, 255, 0.75);
+
+        @media (prefers-color-scheme: dark) {
+            color: white;
+            background-color: #1e1314;
+        }
     }
 }
