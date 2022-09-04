@@ -2,12 +2,6 @@
     max-width: 18rem;
 }
 
-.packet-analyzer__structure {
-    display: flex;
-    margin-bottom: 0.5rem;
-    position: relative;
-}
-
 .packet-analyzer__label {
     outline: none;
     font-size: 0.9rem;
@@ -66,10 +60,6 @@
         border: solid 1px rgb(5 187 170 / 50%);
         color: #339e9e;
     }
-}
-
-.packet-analyzer__structure:hover .packet-analyzer__options {
-    display: block;
 }
 
 .packet-analyzer__options {

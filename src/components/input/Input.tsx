@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 
 import "@/src/components/input/Input.scss";
 
-function Input(): ReactElement {
+const Input = (): ReactElement => {
     const { input, setInput } = useInputState();
 
     return (
@@ -16,6 +16,6 @@ function Input(): ReactElement {
             />
         </div>
     );
-}
+};
 
 export default Input;

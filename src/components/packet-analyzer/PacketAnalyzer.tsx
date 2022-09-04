@@ -7,7 +7,7 @@ import { ReactElement, useMemo } from "react";
 import Input from "@/src/components/input/Input";
 import "@/src/components/packet-analyzer/PacketAnalyzer.scss";
 
-function PacketAnalyzer(): ReactElement {
+const PacketAnalyzer = (): ReactElement => {
     const { input } = useInputState();
     const { structure } = useStructureState();
 
@@ -28,6 +28,6 @@ function PacketAnalyzer(): ReactElement {
             </div>
         </div>
     );
-}
+};
 
 export default PacketAnalyzer;

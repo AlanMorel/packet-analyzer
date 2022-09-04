@@ -3,7 +3,7 @@ import { ReactElement } from "react";
 
 import "@/src/components/structure-buttons/StructureButtons.scss";
 
-function StructureButtons(): ReactElement {
+const StructureButtons = (): ReactElement => {
     const { addStructure } = useStructureState();
 
     return (
@@ -21,6 +21,6 @@ function StructureButtons(): ReactElement {
             <button onClick={(): void => addStructure("coordsF")}>+ Coords F</button>
         </div>
     );
-}
+};
 
 export default StructureButtons;

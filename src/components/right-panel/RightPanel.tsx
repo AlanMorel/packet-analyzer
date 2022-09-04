@@ -1,14 +1,13 @@
-import { useSlotsState } from "@/src/atoms/Slot";
 import { useStructureState } from "@/src/atoms/Structure";
+import Slots from "@/src/components/slots/Slots";
 import StructureButtons from "@/src/components/structure-buttons/StructureButtons";
+import { Structure } from "@/src/utils/Interfaces";
 import { ReactElement, useMemo } from "react";
 
 import "@/src/components/right-panel/RightPanel.scss";
-import { Slot, Structure } from "@/src/utils/Interfaces";
 
-function RightPanel(): ReactElement {
+const RightPanel = (): ReactElement => {
     const { structure, deleteStructure, onLabelRename, updateStructure, moveStructure } = useStructureState();
-    const { slots, renameSlot, loadSlot, saveSlot } = useSlotsState();
 
     const stringified = useMemo(() => {
         return JSON.stringify(structure);
@@ -51,29 +50,9 @@ function RightPanel(): ReactElement {
                     />
                 </div>
             </div>
-            <div className="packet-analyzer__slots">
-                {slots.map((slot: Slot, index: number) => (
-                    <div className="packet-analyzer__structure" key={index}>
-                        <div className="packet-analyzer__slot-label">Slot {index + 1}</div>
-                        <input
-                            type="text"
-                            className="packet-analyzer__label"
-                            value={slot.label}
-                            onInput={(event): void => renameSlot(event, index)}
-                        />
-                        <div className="packet-analyzer__options">
-                            <button className="packet-analyzer__option" onClick={(): void => loadSlot(index)}>
-                                Load
-                            </button>
-                            <button className="packet-analyzer__option" onClick={(): void => saveSlot(index)}>
-                                Save
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <Slots />
         </div>
     );
-}
+};
 
 export default RightPanel;

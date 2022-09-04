@@ -3,7 +3,7 @@
     color-scheme: light dark;
     background-color: #242424;
     font-synthesis: none;
-    text-rendering: optimizeLegibility;
+    text-rendering: optimizelegibility;
 }
 
 .app {
@@ -12,9 +12,9 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    margin: auto;
     margin-top: 5rem;
     max-width: 70rem;
-    margin: auto;
 }
 
 body {
@@ -42,14 +42,14 @@ textarea {
     resize: vertical;
     box-sizing: border-box;
     padding: 0.25rem 0.5rem;
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: rgb(0 0 0 / 10%);
     border-radius: 0.25rem;
     outline: none;
 }
 
 input,
 textarea {
-    color: rgba(0, 0, 0, 0.9);
+    color: rgb(0 0 0 / 90%);
 }
 
 @media (prefers-color-scheme: dark) {

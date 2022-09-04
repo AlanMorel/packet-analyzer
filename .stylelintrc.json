@@ -1,0 +1,11 @@
+{
+    "extends": ["stylelint-config-standard-scss", "stylelint-config-css-modules"],
+    "plugins": ["stylelint-scss", "stylelint-prettier"],
+    "rules": {
+        "prettier/prettier": true,
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": true,
+        "indentation": 4,
+        "selector-class-pattern": null
+    }
+}
