@@ -46,6 +46,7 @@ export const useStructureState = (): any => {
         const value = target.value;
         setStructure(JSON.parse(value));
     };
+
     const moveStructure = (index: number, amount: number): void => {
         if (index + amount < 0 || index + amount >= structure.length) {
             return;

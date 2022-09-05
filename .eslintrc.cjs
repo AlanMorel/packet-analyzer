@@ -1,8 +1,9 @@
 module.exports = {
     env: {
-        browser: true,
+        node: true,
         es2021: true,
-        jest: true
+        jest: true,
+        browser: true
     },
     extends: [
         "eslint:recommended",
@@ -57,6 +58,7 @@ module.exports = {
         "no-prototype-builtins": 1,
         "prettier/prettier": ["error"]
     },
+    ignorePatterns: ["**/*.html"],
     settings: {
         "import/resolver": {
             typescript: {}
