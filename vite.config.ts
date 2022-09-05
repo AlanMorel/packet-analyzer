@@ -7,6 +7,7 @@ dotenv.config();
 
 export default defineConfig({
     plugins: [react()],
+    base: "/packet-analyzer/",
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./")
@@ -15,5 +16,18 @@ export default defineConfig({
     server: {
         port: parseInt(process.env.PORT || "8087")
     },
-    base: "/packet-analyzer/"
+    css: {
+        preprocessorOptions: {
+            scss: {
+                additionalData: `@import "@/assets/scss/global.scss";`
+            }
+        }
+    },
+    build: {
+        rollupOptions: {
+            output: {
+                format: "es"
+            }
+        }
+    }
 });

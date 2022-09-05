@@ -1,4 +1,4 @@
-import logo from "@/src/assets/images/logo.png";
+import logo from "@/assets/images/logo.png";
 import PacketAnalyzer from "@/src/components/packet-analyzer/PacketAnalyzer";
 import { ReactElement } from "react";
 import { RecoilRoot } from "recoil";
