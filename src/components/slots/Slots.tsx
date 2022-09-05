@@ -8,9 +8,9 @@ const Slots = (): ReactElement => {
     const { slots, renameSlot, loadSlot, saveSlot } = useSlotsState();
 
     return (
-        <div className="packet-analyzer__slots">
+        <ul>
             {slots.map((slot: Slot, index: number) => (
-                <div className="packet-analyzer__structure" key={index}>
+                <li className="packet-analyzer__structure" key={index}>
                     <div className="packet-analyzer__slot-label">Slot {index + 1}</div>
                     <input
                         type="text"
@@ -26,9 +26,9 @@ const Slots = (): ReactElement => {
                             Save
                         </button>
                     </div>
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 };
 

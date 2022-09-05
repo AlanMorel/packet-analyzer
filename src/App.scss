@@ -13,7 +13,7 @@
     text-align: center;
     color: #2c3e50;
     margin: auto;
-    margin-top: 5rem;
+    padding-top: 2rem;
     max-width: 70rem;
 }
 
@@ -50,6 +50,11 @@ textarea {
 input,
 textarea {
     color: rgb(0 0 0 / 90%);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 @media (prefers-color-scheme: dark) {

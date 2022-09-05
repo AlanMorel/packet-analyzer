@@ -1,10 +1,14 @@
 .packet-analyzer__structure {
     display: flex;
-    margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
     position: relative;
 
     &:hover .packet-analyzer__options {
         display: block;
+    }
+
+    &:hover .packet-analyzer__label {
+        border-color: rgb(0 0 0 / 15%);
     }
 }
 

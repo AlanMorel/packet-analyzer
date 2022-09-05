@@ -1,10 +1,10 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
+import Input from "@/src/components/input/Input";
 import RightPanel from "@/src/components/right-panel/RightPanel";
 import { parsePacket } from "@/src/utils/PacketUtils";
 import { ReactElement, useMemo } from "react";
 
-import Input from "@/src/components/input/Input";
 import "@/src/components/packet-analyzer/PacketAnalyzer.scss";
 
 const PacketAnalyzer = (): ReactElement => {
