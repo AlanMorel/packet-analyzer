@@ -10,12 +10,12 @@ const RightPanel = (): ReactElement => {
     return (
         <ul className="packet-analyzer__right-panel">
             <li className="packet-analyzer__section">
-                <Structures />
-                <StructureButtons />
-                <RawData />
+                <Slots />
             </li>
             <li className="packet-analyzer__section">
-                <Slots />
+                <StructureButtons />
+                <Structures />
+                <RawData />
             </li>
         </ul>
     );

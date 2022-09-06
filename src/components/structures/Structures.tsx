@@ -8,7 +8,7 @@ const Structures = (): ReactElement => {
     const { structure, deleteStructure, onLabelRename, moveStructure } = useStructureState();
 
     return (
-        <ul>
+        <ul className="packet-analyzer__structures">
             {structure.map((struct: Structure, index: number) => (
                 <li className="packet-analyzer__section-item" key={index}>
                     <div className={`packet-analyzer__unit packet-analyzer__unit--${struct.unit.toLowerCase()}`}>
