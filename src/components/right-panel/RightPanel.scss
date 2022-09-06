@@ -1,3 +1,13 @@
 .packet-analyzer__right-panel {
     max-width: 18rem;
 }
+
+.packet-analyzer__section {
+    margin-bottom: 1rem;
+    border: solid 1px;
+    border-radius: 0.25rem;
+    border-color: rgb(0 0 0 / 10%);
+    background-color: var(--light-component-background-color);
+    padding: 0.5rem;
+    color: var(--text-color);
+}

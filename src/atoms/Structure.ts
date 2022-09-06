@@ -1,14 +1,24 @@
 import { defaultStructure } from "@/src/utils/Defaults";
 import { Structure, UnitTypes } from "@/src/utils/Interfaces";
 import { FormEvent } from "react";
-import { atom, useRecoilState } from "recoil";
+import { atom, SetterOrUpdater, useRecoilState } from "recoil";
 
 const structureState = atom({
     key: "structureState",
     default: defaultStructure
 });
 
-export const useStructureState = (): any => {
+interface IStructure {
+    structure: Structure[];
+    setStructure: SetterOrUpdater<Structure[]>;
+    addStructure: (unit: UnitTypes) => void;
+    deleteStructure: (index: number) => void;
+    onLabelRename: (event: FormEvent<EventTarget>, index: number) => void;
+    updateStructure: (event: FormEvent<EventTarget>) => void;
+    moveStructure: (index: number, amount: number) => void;
+}
+
+export const useStructureState = (): IStructure => {
     const [structure, setStructure] = useRecoilState(structureState);
 
     const addStructure = (unit: UnitTypes): void => {

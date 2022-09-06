@@ -1,12 +1,17 @@
 import { defaultPacket } from "@/src/utils/Defaults";
-import { atom, useRecoilState } from "recoil";
+import { atom, SetterOrUpdater, useRecoilState } from "recoil";
 
 const inputState = atom({
     key: "inputState",
     default: defaultPacket
 });
 
-export const useInputState = (): any => {
+interface IInput {
+    input: string;
+    setInput: SetterOrUpdater<string>;
+}
+
+export const useInputState = (): IInput => {
     const [input, setInput] = useRecoilState(inputState);
 
     return { input, setInput };

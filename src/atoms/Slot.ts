@@ -2,7 +2,7 @@ import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
 import { Slot } from "@/src/utils/Interfaces";
 import { FormEvent } from "react";
-import { atom, useRecoilState } from "recoil";
+import { atom, SetterOrUpdater, useRecoilState } from "recoil";
 
 const getSlots = (): Slot[] => {
     let slotsJSON = localStorage.getItem("slots");
@@ -26,7 +26,15 @@ const slotState = atom({
     default: getSlots()
 });
 
-export const useSlotsState = (): any => {
+interface ISlot {
+    slots: Slot[];
+    setSlots: SetterOrUpdater<Slot[]>;
+    loadSlot: (index: number) => void;
+    saveSlot: (index: number) => void;
+    renameSlot: (event: FormEvent<EventTarget>, index: number) => void;
+}
+
+export const useSlotsState = (): ISlot => {
     const [slots, setSlots] = useRecoilState(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
