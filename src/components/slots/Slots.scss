@@ -1,10 +1,10 @@
 .packet-analyzer__slot-label {
     margin-right: 0.5rem;
     border-radius: 0.25rem;
-    background-color: rgb(0 0 0 / 50%);
+    background-color: var(--darken-contrast-100);
     padding: 0.1rem 0.25rem;
     min-width: 2.5rem;
-    color: white;
+    color: var(--contrast-black);
     font-size: 0.75rem;
     font-weight: bold;
 }

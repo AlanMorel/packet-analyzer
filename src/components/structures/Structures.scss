@@ -1,5 +1,5 @@
 .packet-analyzer__unit {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
     border-radius: 0.25rem;
     padding: 0.1rem 0.25rem;
     min-width: 3.25rem;
@@ -50,7 +50,7 @@
 }
 
 .packet-analyzer__option {
-    margin-right: 0.25rem;
+    margin-right: 0.1rem;
     border: solid 1px var(--text-color);
     border-style: none;
     border-radius: 0.25rem;
@@ -59,7 +59,7 @@
     color: var(--text-color);
 
     &:hover {
-        background: rgb(0 0 0 / 5%);
+        background: var(--darken-contrast-100);
     }
 
     &:last-child {

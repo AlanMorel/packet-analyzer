@@ -3,6 +3,8 @@
     --text-color: #{$black-color};
     --contrast-white: #{$white-color};
     --contrast-black: #{$black-color};
+    --darken-contrast-100: #{$darken-100};
+    --light-border-color: #{$gray-100};
     --light-component-background-color: #{$light-component-background-color};
     --dark-component-background-color: #{$dark-component-background-color};
 
@@ -11,6 +13,8 @@
         --text-color: #{$white-color};
         --contrast-white: #{$black-color};
         --contrast-black: #{$white-color};
+        --darken-contrast-100: #{$lighten-100};
+        --light-border-color: #{$gray-900};
         --light-component-background-color: #{$dark-component-background-color};
         --dark-component-background-color: #{$light-component-background-color};
     }
@@ -62,7 +66,7 @@ textarea {
     box-sizing: border-box;
     outline: none;
     border-radius: 0.25rem;
-    border-color: rgb(0 0 0 / 10%);
+    border-color: var(--light-border-color);
     padding: 0.25rem 0.5rem;
     width: 100%;
     resize: vertical;

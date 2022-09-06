@@ -15,10 +15,11 @@
 .packet-analyzer__label {
     outline: none;
     border: solid 1px transparent;
+    border-radius: 0.25rem;
     background: none;
-    padding: 0;
+    padding: 0.1rem 0.25rem;
     width: calc(100% - 10rem);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .packet-analyzer__section-item {
@@ -32,7 +33,7 @@
         }
 
         .packet-analyzer__label {
-            border-color: rgb(0 0 0 / 15%);
+            background-color: var(--darken-contrast-100);
         }
     }
 }
