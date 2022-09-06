@@ -13,17 +13,12 @@
         border-color: rgb(0 0 0 / 50%);
         background-color: transparent;
         cursor: pointer;
-        color: rgb(0 0 0 / 75%);
+        color: var(--text-color);
         font-size: 0.8rem;
 
         &:hover {
-            border-color: black;
-            color: black;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            border-color: rgb(255 255 255 / 30%);
-            color: white;
+            border-color: var(--contrast-white);
+            color: var(--contrast-white);
         }
     }
 }

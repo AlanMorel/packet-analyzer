@@ -1,9 +1,19 @@
 :root {
     --background-color: #{$light-background-color};
-}
+    --text-color: #{$black-color};
+    --contrast-white: #{$black-color};
+    --contrast-black: #{$white-color};
+    --light-component-background-color: #{$light-component-background-color};
+    --dark-component-background-color: #{$dark-component-background-color};
 
-[theme="dark"] {
-    --background-color: rgb(0 0 0 / 95%);
+    @media (prefers-color-scheme: dark) {
+        --background-color: #{$dark-background-color};
+        --text-color: #{$white-color};
+        --contrast-white: #{$white-color};
+        --contrast-black: #{$black-color};
+        --light-component-background-color: #{$dark-component-background-color};
+        --dark-component-background-color: #{$light-component-background-color};
+    }
 }
 
 body {
@@ -14,13 +24,17 @@ body {
     background-repeat: no-repeat;
     background-size: 50% auto;
     padding-top: 2rem;
-    padding-bottom: 20rem;
+    padding-bottom: 16rem;
     text-align: center;
     text-rendering: optimizelegibility;
-    color: #2c3e50;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    color-scheme: light dark;
     font-synthesis: none;
+}
+
+body,
+input,
+textarea {
+    color: var(--text-color);
 }
 
 h1 {
@@ -43,29 +57,7 @@ textarea {
     resize: vertical;
 }
 
-input,
-textarea {
-    color: rgb(0 0 0 / 90%);
-}
-
 ul {
     margin: 0;
     padding: 0;
-}
-
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-
-    body {
-        background: #3d0000;
-        color: white;
-    }
-
-    .app,
-    input,
-    textarea {
-        color: white;
-    }
 }

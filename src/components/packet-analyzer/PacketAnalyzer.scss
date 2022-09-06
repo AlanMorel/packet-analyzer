@@ -19,12 +19,7 @@
     border: solid 1px;
     border-radius: 0.25rem;
     border-color: rgb(0 0 0 / 10%);
-    background-color: rgb(255 255 255 / 75%);
+    background-color: var(--light-component-background-color);
     padding: 0.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-    .packet-analyzer__section {
-        background-color: #1e1314;
-    }
+    color: var(--text-color);
 }
