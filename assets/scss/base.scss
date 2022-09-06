@@ -1,16 +1,16 @@
 :root {
     --background-color: #{$light-background-color};
     --text-color: #{$black-color};
-    --contrast-white: #{$black-color};
-    --contrast-black: #{$white-color};
+    --contrast-white: #{$white-color};
+    --contrast-black: #{$black-color};
     --light-component-background-color: #{$light-component-background-color};
     --dark-component-background-color: #{$dark-component-background-color};
 
     @media (prefers-color-scheme: dark) {
         --background-color: #{$dark-background-color};
         --text-color: #{$white-color};
-        --contrast-white: #{$white-color};
-        --contrast-black: #{$black-color};
+        --contrast-white: #{$black-color};
+        --contrast-black: #{$white-color};
         --light-component-background-color: #{$dark-component-background-color};
         --dark-component-background-color: #{$light-component-background-color};
     }
