@@ -10,7 +10,7 @@ const Slots = (): ReactElement => {
     return (
         <ul>
             {slots.map((slot: Slot, index: number) => (
-                <li className="packet-analyzer__structure" key={index}>
+                <li className="packet-analyzer__section-item" key={index}>
                     <div className="packet-analyzer__slot-label">Slot {index + 1}</div>
                     <input
                         type="text"

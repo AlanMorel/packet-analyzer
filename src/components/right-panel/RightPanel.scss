@@ -11,3 +11,28 @@
     padding: 0.25rem 0.5rem;
     color: var(--text-color);
 }
+
+.packet-analyzer__label {
+    outline: none;
+    border: solid 1px transparent;
+    background: none;
+    padding: 0;
+    width: calc(100% - 10rem);
+    font-size: 0.9rem;
+}
+
+.packet-analyzer__section-item {
+    display: flex;
+    position: relative;
+    padding: 0.25rem 0;
+
+    &:hover {
+        .packet-analyzer__options {
+            display: block;
+        }
+
+        .packet-analyzer__label {
+            border-color: rgb(0 0 0 / 15%);
+        }
+    }
+}

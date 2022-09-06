@@ -1,4 +1,4 @@
-.packet-analyzer__output {
+.packet-analyzer__main {
     display: flex;
 
     textarea {
@@ -7,9 +7,4 @@
         min-height: 20rem;
         color: white;
     }
-}
-
-.packet-analyzer__outputs {
-    flex: 1;
-    margin-right: 1rem;
 }

@@ -2,15 +2,15 @@ import { useStructureState } from "@/src/atoms/Structure";
 import { Structure } from "@/src/utils/Interfaces";
 import { ReactElement } from "react";
 
-import "@/src/components/packet-structures/PacketStructures.scss";
+import "@/src/components/structures/Structures.scss";
 
-const PacketStructures = (): ReactElement => {
+const Structures = (): ReactElement => {
     const { structure, deleteStructure, onLabelRename, moveStructure } = useStructureState();
 
     return (
         <ul>
             {structure.map((struct: Structure, index: number) => (
-                <li className="packet-analyzer__structure" key={index}>
+                <li className="packet-analyzer__section-item" key={index}>
                     <div className={`packet-analyzer__unit packet-analyzer__unit--${struct.unit.toLowerCase()}`}>
                         {struct.unit}
                     </div>
@@ -37,4 +37,4 @@ const PacketStructures = (): ReactElement => {
     );
 };
 
-export default PacketStructures;
+export default Structures;

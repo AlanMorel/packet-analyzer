@@ -1,24 +1,22 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
+import { defaultSlots } from "@/src/utils/Defaults";
 import { Slot } from "@/src/utils/Interfaces";
 import { FormEvent } from "react";
 import { atom, SetterOrUpdater, useRecoilState } from "recoil";
 
 const getSlots = (): Slot[] => {
     let slotsJSON = localStorage.getItem("slots");
-    if (!slotsJSON) {
-        const slotsDefault = [];
-        for (let i = 0; i < 10; i++) {
-            slotsDefault.push({
-                label: `Slot ${i + 1} Label`,
-                input: "",
-                structure: []
-            });
-        }
-        slotsJSON = JSON.stringify(slotsDefault);
-        localStorage.setItem("slots", slotsJSON);
+
+    if (slotsJSON) {
+        return JSON.parse(slotsJSON);
     }
-    return JSON.parse(slotsJSON);
+
+    const slotsDefault = defaultSlots();
+    slotsJSON = JSON.stringify(slotsDefault);
+    localStorage.setItem("slots", slotsJSON);
+
+    return slotsDefault;
 };
 
 const slotState = atom({

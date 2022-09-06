@@ -27,7 +27,7 @@ body {
     padding-bottom: 16rem;
     text-align: center;
     text-rendering: optimizelegibility;
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: $text-font;
     font-synthesis: none;
 }
 
@@ -35,6 +35,11 @@ body,
 input,
 textarea {
     color: var(--text-color);
+}
+
+input,
+button {
+    font-family: $text-font;
 }
 
 h1 {
@@ -47,6 +52,10 @@ img {
     display: block;
     margin: auto;
     max-width: 100%;
+}
+
+li {
+    list-style: none;
 }
 
 textarea {

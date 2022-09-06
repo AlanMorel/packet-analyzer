@@ -1,9 +1,9 @@
 import { useStructureState } from "@/src/atoms/Structure";
 import { ReactElement, useMemo } from "react";
 
-import "@/src/components/packet-analyzer-data/PacketAnalyzerData.scss";
+import "@/src/components/raw-data/RawData.scss";
 
-const RightPanel = (): ReactElement => {
+const RawData = (): ReactElement => {
     const { structure, updateStructure } = useStructureState();
 
     const stringified = useMemo(() => {
@@ -14,7 +14,7 @@ const RightPanel = (): ReactElement => {
         <div>
             <input
                 type="text"
-                className="packet-analyzer__json"
+                className="packet-analyzer__raw-data"
                 value={stringified}
                 onInput={(event): void => updateStructure(event)}
             />
@@ -22,4 +22,4 @@ const RightPanel = (): ReactElement => {
     );
 };
 
-export default RightPanel;
+export default RawData;

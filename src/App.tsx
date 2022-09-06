@@ -1,5 +1,5 @@
 import logo from "@/assets/images/logo.png";
-import PacketAnalyzer from "@/src/components/packet-analyzer/PacketAnalyzer";
+import Main from "@/src/components/main/Main";
 import { ReactElement } from "react";
 import { RecoilRoot } from "recoil";
 
@@ -12,7 +12,7 @@ const App = (): ReactElement => {
             <img src={logo} alt="Logo" />
             <h1>Packet Analyzer</h1>
             <RecoilRoot>
-                <PacketAnalyzer />
+                <Main />
             </RecoilRoot>
         </div>
     );
