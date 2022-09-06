@@ -1,0 +1,71 @@
+:root {
+    --background-color: #{$light-background-color};
+}
+
+[theme="dark"] {
+    --background-color: rgb(0 0 0 / 95%);
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    background-image: url("@/assets/images/npc.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    padding-top: 2rem;
+    padding-bottom: 20rem;
+    text-align: center;
+    text-rendering: optimizelegibility;
+    color: #2c3e50;
+    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+    font-synthesis: none;
+}
+
+h1 {
+    margin: 0 0 2rem;
+}
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+textarea {
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 0.25rem;
+    border-color: rgb(0 0 0 / 10%);
+    padding: 0.25rem 0.5rem;
+    width: 100%;
+    resize: vertical;
+}
+
+input,
+textarea {
+    color: rgb(0 0 0 / 90%);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+
+    body {
+        background: #3d0000;
+        color: white;
+    }
+
+    .app,
+    input,
+    textarea {
+        color: white;
+    }
+}

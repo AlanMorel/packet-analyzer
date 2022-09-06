@@ -1,7 +1,7 @@
 .packet-analyzer__structure {
     display: flex;
-    padding: 0.25rem 0;
     position: relative;
+    padding: 0.25rem 0;
 
     &:hover .packet-analyzer__options {
         display: block;
@@ -13,17 +13,17 @@
 }
 
 .packet-analyzer__slot-label {
-    font-size: 0.75rem;
-    color: rgb(0 0 0 / 75%);
-    font-weight: bold;
-    border-radius: 0.25rem;
+    margin-right: 0.5rem;
     border: solid 1px black;
+    border-radius: 0.25rem;
     padding: 0.1rem 0.25rem;
     min-width: 2.5rem;
-    margin-right: 0.5rem;
+    color: rgb(0 0 0 / 75%);
+    font-size: 0.75rem;
+    font-weight: bold;
 
     @media (prefers-color-scheme: dark) {
-        color: white;
         border-color: rgb(255 255 255 / 30%);
+        color: white;
     }
 }

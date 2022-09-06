@@ -3,6 +3,7 @@ import PacketAnalyzer from "@/src/components/packet-analyzer/PacketAnalyzer";
 import { ReactElement } from "react";
 import { RecoilRoot } from "recoil";
 
+import "@/assets/scss/base.scss";
 import "@/src/App.scss";
 
 const App = (): ReactElement => {

@@ -2,12 +2,12 @@
     margin-bottom: 1rem;
 
     textarea {
-        min-height: 7rem;
         background-color: rgb(255 255 255 / 75%);
+        min-height: 7rem;
 
         @media (prefers-color-scheme: dark) {
-            color: white;
             background-color: #1e1314;
+            color: white;
         }
     }
 }

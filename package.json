@@ -42,6 +42,7 @@
         "prettier": "^2.7.1",
         "sass": "^1.54.8",
         "stylelint": "^14.11.0",
+        "stylelint-config-concentric-order": "^5.1.0",
         "stylelint-config-css-modules": "^4.1.0",
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-standard-scss": "^5.0.0",

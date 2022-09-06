@@ -1,5 +1,5 @@
 {
-    "extends": ["stylelint-config-standard-scss", "stylelint-config-css-modules"],
+    "extends": ["stylelint-config-standard-scss", "stylelint-config-css-modules", "stylelint-config-concentric-order"],
     "plugins": ["stylelint-scss", "stylelint-prettier"],
     "rules": {
         "prettier/prettier": true,

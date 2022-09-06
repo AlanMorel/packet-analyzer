@@ -1,20 +1,20 @@
 .packet-analyzer__label {
     outline: none;
-    font-size: 0.9rem;
-    background: none;
-    border-style: none;
-    padding: 0;
     border: solid 1px transparent;
+    border-style: none;
+    background: none;
+    padding: 0;
     width: calc(100% - 10rem);
+    font-size: 0.9rem;
 }
 
 .packet-analyzer__unit {
-    font-weight: bold;
-    font-size: 0.75rem;
+    margin-right: 0.5rem;
     border-radius: 0.25rem;
     padding: 0.1rem 0.25rem;
-    margin-right: 0.5rem;
     min-width: 3.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
 
     &--opcode {
         border: solid 1px rgb(255 0 0 / 50%);
@@ -61,19 +61,19 @@
 }
 
 .packet-analyzer__options {
+    display: none;
     position: absolute;
     right: 0;
-    display: none;
 }
 
 .packet-analyzer__option {
-    background: none;
-    border-style: none;
-    cursor: pointer;
-    border: solid 1px black;
-    border-radius: 0.25rem;
-    color: black;
     margin-right: 0.25rem;
+    border: solid 1px black;
+    border-style: none;
+    border-radius: 0.25rem;
+    background: none;
+    cursor: pointer;
+    color: black;
 
     &:hover {
         background: rgb(0 0 0 / 5%);
