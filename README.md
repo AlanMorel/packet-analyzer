@@ -26,12 +26,6 @@ URL=http://packetanalyzer.localhost
 TZ=America/New_York
 ```
 
-Create a folder called `logs` at the root:
-
-```sh
-mkdir logs
-```
-
 Run the app in development:
 
 ```sh
@@ -41,6 +35,12 @@ yarn dev
 Visit `http://localhost:8087/` to see the app running.
 
 ## Docker
+
+Create a folder called `logs` at the root:
+
+```sh
+mkdir logs
+```
 
 You can run the app using Docker
 

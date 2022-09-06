@@ -1,39 +1,47 @@
 {
     "name": "packet-analyzer",
-    "private": true,
     "version": "0.0.0",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AlanMorel/packet-analyzer.git"
+    },
+    "license": "MIT",
+    "author": "Alan Morel",
     "type": "module",
     "scripts": {
-        "dev": "vite",
         "build": "tsc && vite build",
-        "preview": "vite preview",
-        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+        "dev": "vite",
         "lint": "eslint src/**/*.{js,jsx,ts,tsx,json} --fix",
-        "stylelint": "stylelint src/**/*.{css,scss} --fix"
+        "preview": "vite preview",
+        "stylelint": "stylelint src/**/*.{css,scss} --fix",
+        "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
     },
     "dependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "recoil": "^0.7.5"
-    },
-    "devDependencies": {
-        "@swc/core": "^1.2.247",
         "@swc/jest": "^0.2.22",
         "@types/jest": "^29.0.0",
         "@types/node": "^18.7.15",
         "@types/react": "^18.0.18",
         "@types/react-dom": "^18.0.6",
-        "@typescript-eslint/eslint-plugin": "^5.36.1",
-        "@typescript-eslint/parser": "^5.36.1",
         "@vitejs/plugin-react": "^2.1.0",
         "dotenv": "^16.0.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "recoil": "^0.7.5",
+        "typescript": "^4.8.2",
+        "vite": "^3.1.0"
+    },
+    "devDependencies": {
+        "@swc/core": "^1.2.248",
+        "@typescript-eslint/eslint-plugin": "^5.36.2",
+        "@typescript-eslint/parser": "^5.36.2",
         "eslint": "^8.23.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-import-resolver-typescript": "^3.5.0",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-jsx-a11y": "^6.6.1",
         "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-react": "^7.31.6",
+        "eslint-plugin-react": "^7.31.7",
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-security": "^1.5.0",
         "husky": "^8.0.1",
@@ -47,8 +55,6 @@
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-standard-scss": "^5.0.0",
         "stylelint-prettier": "^2.0.0",
-        "ts-node": "^10.9.1",
-        "typescript": "^4.8.2",
-        "vite": "^3.1.0"
+        "ts-node": "^10.9.1"
     }
 }
