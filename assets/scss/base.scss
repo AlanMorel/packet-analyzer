@@ -4,9 +4,9 @@
     --contrast-white: #{$white-color};
     --contrast-black: #{$black-color};
     --darken-contrast-100: #{$darken-100};
-    --light-border-color: #{$gray-100};
-    --light-component-background-color: #{$light-component-background-color};
-    --dark-component-background-color: #{$dark-component-background-color};
+    --light-border-color: #{$darken-200};
+    --light-component-background-color: #{$lighten-900};
+    --dark-component-background-color: #{$darken-500};
 
     @media (prefers-color-scheme: dark) {
         --background-color: #{$dark-background-color};
@@ -14,25 +14,31 @@
         --contrast-white: #{$black-color};
         --contrast-black: #{$white-color};
         --darken-contrast-100: #{$lighten-100};
-        --light-border-color: #{$gray-900};
-        --light-component-background-color: #{$dark-component-background-color};
-        --dark-component-background-color: #{$light-component-background-color};
+        --light-border-color: #{$lighten-200};
+        --light-component-background-color: #{$darken-500};
+        --dark-component-background-color: #{$lighten-900};
     }
 }
 
 body {
     margin: 0;
-    background-color: var(--background-color);
-    background-image: url("@/assets/images/npc.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 40rem auto;
+    background: url("@/assets/images/background.png"),
+        linear-gradient(180deg, rgb(0 129 201) 0%, rgb(48 151 208) 20%, rgb(73 180 239) 100%);
+    background-position: bottom left;
+    background-repeat: repeat-x;
     padding-top: 2rem;
-    padding-bottom: 14rem;
+    padding-bottom: 30rem;
     text-align: center;
     text-rendering: optimizelegibility;
     font-family: $text-font;
     font-synthesis: none;
+
+    @media (prefers-color-scheme: dark) {
+        background: url("@/assets/images/background.png"),
+            linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%);
+        background-position: bottom left;
+        background-repeat: repeat-x;
+    }
 }
 
 body,
@@ -47,9 +53,18 @@ button {
 }
 
 h1 {
-    margin: 0.5rem 0 1.5rem;
+    margin: 1rem 0;
+    color: $white-color;
     font-family: $primary-font;
-    font-size: 3rem;
+    font-size: 4.5rem;
+}
+
+h2 {
+    margin: 0 0 3rem;
+    color: $white-color;
+    font-family: $text-font;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 img {
@@ -65,8 +80,8 @@ li {
 textarea {
     box-sizing: border-box;
     outline: none;
+    border: none;
     border-radius: 0.25rem;
-    border-color: var(--light-border-color);
     padding: 0.25rem 0.5rem;
     width: 100%;
     resize: vertical;

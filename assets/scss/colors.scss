@@ -1,14 +1,13 @@
+$light-background-color: #49b4ef;
+$dark-background-color: #2e2c52;
+
 $white-color: #fff;
 $black-color: #000;
 
-$gray-100: #d2d2d2;
-$gray-900: #363636;
-
 $darken-100: rgba($black-color, 0.05);
+$darken-200: rgba($black-color, 0.15);
+$darken-500: rgba($black-color, 0.35);
+
 $lighten-100: rgba($white-color, 0.05);
-
-$light-background-color: #ffefef;
-$dark-background-color: #2d2d2d;
-
-$light-component-background-color: #fff;
-$dark-component-background-color: #202020;
+$lighten-200: rgba($white-color, 0.15);
+$lighten-900: rgba($white-color, 0.95);
