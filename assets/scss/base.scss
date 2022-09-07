@@ -23,7 +23,7 @@
 body {
     margin: 0;
     background: url("@/assets/images/background.png"),
-        linear-gradient(180deg, rgb(0 129 201) 0%, rgb(48 151 208) 20%, rgb(73 180 239) 100%);
+        linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
     background-position: bottom left;
     background-repeat: repeat-x;
     padding-top: 2rem;
@@ -54,14 +54,14 @@ button {
 
 h1 {
     margin: 1rem 0;
-    color: $white-color;
+    color: var(--contrast-black);
     font-family: $primary-font;
     font-size: 4.5rem;
 }
 
 h2 {
     margin: 0 0 3rem;
-    color: $white-color;
+    color: var(--contrast-black);
     font-family: $text-font;
     font-size: 1.5rem;
     font-weight: bold;
