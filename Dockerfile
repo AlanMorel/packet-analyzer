@@ -8,7 +8,7 @@ RUN npx browserslist@latest --update-db && rm -rf node_modules && yarn install -
 
 COPY . .
 
-RUN yarn build
+RUN yarn build && yarn storybook:build
 
 FROM nginx:alpine as base
 
