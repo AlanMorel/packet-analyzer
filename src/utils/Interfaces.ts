@@ -3,18 +3,21 @@ export interface Structure {
     label: string;
 }
 
-export type UnitTypes =
-    | "byte"
-    | "short"
-    | "int"
-    | "long"
-    | "float"
-    | "asciiStr"
-    | "mapleStr"
-    | "coordsF"
-    | "coordsS"
-    | "coordsB"
-    | "opcode";
+export const unitTypes = [
+    "byte",
+    "short",
+    "int",
+    "long",
+    "float",
+    "asciiStr",
+    "mapleStr",
+    "coordsF",
+    "coordsS",
+    "coordsB",
+    "opcode"
+] as const;
+
+type UnitTypes = typeof unitTypes[number];
 
 export interface Slot {
     input: string;

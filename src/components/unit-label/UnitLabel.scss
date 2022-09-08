@@ -1,0 +1,44 @@
+.packet-analyzer__unit {
+    margin-right: 0.25rem;
+    border-radius: 0.25rem;
+    padding: 0.1rem 0.25rem;
+    min-width: 3.25rem;
+    color: var(--contrast-white);
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    &--opcode {
+        background-color: #d64f4f;
+    }
+
+    &--byte {
+        background-color: #c74fd6;
+    }
+
+    &--short {
+        background-color: #7d4fd6;
+    }
+
+    &--int {
+        background-color: #16ab2f;
+    }
+
+    &--float {
+        background-color: #1a75d6;
+    }
+
+    &--long {
+        background-color: #514fd6;
+    }
+
+    &--asciistr,
+    &--maplestr {
+        background-color: #d6a64f;
+    }
+
+    &--coordsb,
+    &--coordss,
+    &--coordsf {
+        background-color: #339e9e;
+    }
+}

@@ -16,13 +16,6 @@ export default defineConfig({
     server: {
         port: parseInt(process.env.PORT || "8087")
     },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "@/assets/scss/global.scss";`
-            }
-        }
-    },
     build: {
         rollupOptions: {
             output: {

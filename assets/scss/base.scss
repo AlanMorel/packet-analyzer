@@ -1,45 +1,12 @@
-:root {
-    --background-color: #{$light-background-color};
-    --text-color: #{$black-color};
-    --contrast-white: #{$white-color};
-    --contrast-black: #{$black-color};
-    --darken-contrast-100: #{$darken-100};
-    --light-border-color: #{$darken-200};
-    --light-component-background-color: #{$lighten-900};
-    --dark-component-background-color: #{$darken-500};
-
-    @media (prefers-color-scheme: dark) {
-        --background-color: #{$dark-background-color};
-        --text-color: #{$white-color};
-        --contrast-white: #{$black-color};
-        --contrast-black: #{$white-color};
-        --darken-contrast-100: #{$lighten-100};
-        --light-border-color: #{$lighten-200};
-        --light-component-background-color: #{$darken-500};
-        --dark-component-background-color: #{$lighten-900};
-    }
-}
+@use "@/assets/scss/fonts.scss";
+@use "@/assets/scss/colors.scss";
 
 body {
     margin: 0;
-    background: url("@/assets/images/light-background.png"),
-        linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
-    background-position: bottom left;
-    background-repeat: repeat-x;
-    padding-top: 2rem;
-    padding-bottom: 28rem;
     text-align: center;
     text-rendering: optimizelegibility;
-    font-family: $text-font;
+    font-family: fonts.$text-font;
     font-synthesis: none;
-
-    @media (prefers-color-scheme: dark) {
-        background: url("@/assets/images/dark-background.png"),
-            linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%);
-        background-position: bottom left;
-        background-repeat: repeat-x;
-        padding-bottom: 20rem;
-    }
 }
 
 body,
@@ -50,20 +17,20 @@ textarea {
 
 input,
 button {
-    font-family: $text-font;
+    font-family: fonts.$text-font;
 }
 
 h1 {
     margin: 1rem 0;
     color: var(--contrast-black);
-    font-family: $primary-font;
+    font-family: fonts.$primary-font;
     font-size: 4.5rem;
 }
 
 h2 {
     margin: 0 0 3rem;
     color: var(--contrast-black);
-    font-family: $text-font;
+    font-family: fonts.$text-font;
     font-size: 1.5rem;
     font-weight: bold;
 }

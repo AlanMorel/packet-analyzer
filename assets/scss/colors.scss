@@ -11,3 +11,25 @@ $darken-500: rgba($black-color, 0.35);
 $lighten-100: rgba($white-color, 0.05);
 $lighten-200: rgba($white-color, 0.15);
 $lighten-900: rgba($white-color, 0.95);
+
+:root {
+    --background-color: #{$light-background-color};
+    --text-color: #{$black-color};
+    --contrast-white: #{$white-color};
+    --contrast-black: #{$black-color};
+    --darken-contrast-100: #{$darken-100};
+    --light-border-color: #{$darken-200};
+    --light-component-background-color: #{$lighten-900};
+    --dark-component-background-color: #{$darken-500};
+
+    @media (prefers-color-scheme: dark) {
+        --background-color: #{$dark-background-color};
+        --text-color: #{$white-color};
+        --contrast-white: #{$black-color};
+        --contrast-black: #{$white-color};
+        --darken-contrast-100: #{$lighten-100};
+        --light-border-color: #{$lighten-200};
+        --light-component-background-color: #{$darken-500};
+        --dark-component-background-color: #{$lighten-900};
+    }
+}

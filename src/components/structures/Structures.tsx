@@ -3,6 +3,7 @@ import { Structure } from "@/src/utils/Interfaces";
 import { ReactElement } from "react";
 
 import "@/src/components/structures/Structures.scss";
+import UnitLabel from "@/src/components/unit-label/UnitLabel";
 
 const Structures = (): ReactElement => {
     const { structure, deleteStructure, onLabelRename, moveStructure } = useStructureState();
@@ -11,9 +12,7 @@ const Structures = (): ReactElement => {
         <ul className="packet-analyzer__structures">
             {structure.map((struct: Structure, index: number) => (
                 <li className="packet-analyzer__section-item" key={index}>
-                    <div className={`packet-analyzer__unit packet-analyzer__unit--${struct.unit.toLowerCase()}`}>
-                        {struct.unit}
-                    </div>
+                    <UnitLabel unit={struct.unit.toLowerCase()} />
                     <input
                         type="text"
                         className="packet-analyzer__label"
