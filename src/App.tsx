@@ -1,4 +1,5 @@
 import Main from "@/src/components/main/Main";
+import Toast from "@/src/components/toast/Toast";
 import { ReactElement } from "react";
 import { RecoilRoot } from "recoil";
 
@@ -12,6 +13,7 @@ const App = (): ReactElement => {
             <h2>Use the packet analyzer to help you figure out and define the structures of packets</h2>
             <RecoilRoot>
                 <Main />
+                <Toast />
             </RecoilRoot>
         </div>
     );

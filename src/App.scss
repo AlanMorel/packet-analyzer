@@ -1,4 +1,4 @@
-body {
+.root {
     background: url("@/assets/images/light-background.png"),
         linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
     background-position: bottom left;
@@ -16,6 +16,7 @@ body {
 }
 
 .app {
-    margin: auto;
     max-width: 70rem;
+    padding: 0 1rem;
+    margin: auto;
 }

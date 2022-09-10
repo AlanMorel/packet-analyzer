@@ -1,5 +1,6 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
+import { useToastState } from "@/src/atoms/Toast";
 import { defaultSlots, MAX_SLOT_SIZE } from "@/src/utils/Defaults";
 import { Slot } from "@/src/utils/Interfaces";
 import { FormEvent } from "react";
@@ -36,6 +37,7 @@ export const useSlotsState = (): ISlot => {
     const [slots, setSlots] = useRecoilState(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
+    const { toast, setToast } = useToastState();
 
     const loadSlot = (index: number): void => {
         const slotsJSON = localStorage.getItem("slots") as string;
@@ -48,7 +50,7 @@ export const useSlotsState = (): ISlot => {
         setInput(newSlots[index].input);
         setStructure(newSlots[index].structure);
 
-        alert(`Slot ${index + 1} "${newSlots[index].label}" loaded.`);
+        setToast(`Slot ${index + 1} "${newSlots[index].label}" loaded.`);
     };
 
     const saveSlot = (index: number): void => {
@@ -64,7 +66,7 @@ export const useSlotsState = (): ISlot => {
         const slotsJSON = JSON.stringify(newSlots);
         localStorage.setItem("slots", slotsJSON);
 
-        alert(`Slot ${index + 1} saved.`);
+        setToast(`Slot ${index + 1} saved.`);
     };
 
     const renameSlot = (event: FormEvent<EventTarget>, index: number): void => {

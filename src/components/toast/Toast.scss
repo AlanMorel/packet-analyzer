@@ -1,0 +1,54 @@
+.toast {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(calc(100% + 1rem));
+    user-select: none;
+    z-index: 101;
+    transition: all 0.5s ease;
+    text-align: center;
+    padding: 0 1rem;
+    opacity: 0;
+
+    &.toast--active {
+        transform: translateY(-2rem);
+        opacity: 1;
+    }
+}
+
+.toast__content {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+    position: relative;
+    backdrop-filter: blur(0.5rem);
+}
+
+.toast__bar {
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.25rem;
+
+    .toast--active & {
+        animation: load 5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes load {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}

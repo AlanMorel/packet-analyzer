@@ -57,7 +57,9 @@
         "eol-last": "error",
         "no-undef": 1,
         "no-prototype-builtins": 1,
-        "prettier/prettier": ["error"]
+        "prettier/prettier": ["error"],
+        "jsx-a11y/click-events-have-key-events": "off",
+        "jsx-a11y/no-static-element-interactions": "off"
     },
     "ignorePatterns": ["**/*.html"],
     "settings": {

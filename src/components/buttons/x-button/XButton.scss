@@ -1,0 +1,22 @@
+.close-button {
+    position: absolute;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    z-index: 1;
+    font-weight: bold;
+    transition: all 0.25s ease;
+
+    .toast__content & {
+        background-color: red;
+        right: -0.25rem;
+        top: -0.25rem;
+
+        &:hover,
+        &:focus {
+            background-color: red;
+        }
+    }
+}
