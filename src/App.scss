@@ -1,17 +1,15 @@
 .root {
+    min-height: 100vh;
     background: url("@/assets/images/light-background.png"),
         linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
     background-position: bottom left;
     background-repeat: repeat-x;
-    padding-top: 2rem;
-    padding-bottom: 28rem;
 
     @media (prefers-color-scheme: dark) {
         background: url("@/assets/images/dark-background.png"),
             linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%);
         background-position: bottom left;
         background-repeat: repeat-x;
-        padding-bottom: 20rem;
     }
 }
 
@@ -19,4 +17,10 @@
     max-width: 70rem;
     padding: 0 1rem;
     margin: auto;
+    padding: 2rem;
+    padding-bottom: 30rem;
+
+    @media (prefers-color-scheme: dark) {
+        padding-bottom: 20rem;
+    }
 }
