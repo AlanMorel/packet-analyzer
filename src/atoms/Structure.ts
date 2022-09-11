@@ -15,7 +15,7 @@ interface IStructure {
     deleteStructure: (index: number) => void;
     onLabelRename: (event: FormEvent<EventTarget>, index: number) => void;
     updateStructure: (event: FormEvent<EventTarget>) => void;
-    moveStructure: (index: number, amount: number) => void;
+    swapStructures: (index1: number, index2: number) => void;
 }
 
 export const useStructureState = (): IStructure => {
@@ -57,16 +57,21 @@ export const useStructureState = (): IStructure => {
         setStructure(JSON.parse(value));
     };
 
-    const moveStructure = (index: number, amount: number): void => {
-        if (index + amount < 0 || index + amount >= structure.length) {
-            return;
-        }
-        const temp = structure[index];
+    const swapStructures = (index1: number, index2: number): void => {
         const newStructure = [...structure];
-        newStructure[index] = newStructure[index + amount];
-        newStructure[index + amount] = temp;
+        const temp = newStructure[index1];
+        newStructure[index1] = newStructure[index2];
+        newStructure[index2] = temp;
         setStructure(newStructure);
     };
 
-    return { structure, setStructure, addStructure, deleteStructure, onLabelRename, updateStructure, moveStructure };
+    return {
+        structure,
+        setStructure,
+        addStructure,
+        deleteStructure,
+        swapStructures,
+        onLabelRename,
+        updateStructure
+    };
 };

@@ -16,8 +16,9 @@
     border-radius: 0.25rem;
     background: none;
     padding: 0.1rem 0.25rem;
-    width: calc(100% - 10rem);
+    width: 100%;
     font-size: 0.8rem;
+    margin-right: 0.5rem;
 }
 
 .packet-analyzer__section-item {
@@ -27,7 +28,7 @@
 
     &:hover {
         .packet-analyzer__options {
-            display: block;
+            display: flex;
         }
 
         .packet-analyzer__label {

@@ -59,3 +59,11 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+[draggable="true"] {
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
+}

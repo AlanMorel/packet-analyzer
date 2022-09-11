@@ -66,14 +66,21 @@ export const useSlotsState = (): ISlot => {
         const slotsJSON = JSON.stringify(newSlots);
         localStorage.setItem("slots", slotsJSON);
 
-        setToast(`Slot ${index + 1} saved.`);
+        setToast(`Slot ${index + 1} "${newSlots[index].label}" saved.`);
     };
 
     const renameSlot = (event: FormEvent<EventTarget>, index: number): void => {
         const target = event.target as HTMLInputElement;
         const label = target.value;
+
+        const newSlot = {
+            ...slots[index],
+            label: label
+        };
+
         const newSlots = [...slots];
-        newSlots[index].label = label;
+        newSlots[index] = newSlot;
+
         setSlots(newSlots);
     };
 
