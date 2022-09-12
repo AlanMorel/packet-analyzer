@@ -1,5 +1,5 @@
 .packet-analyzer__structures {
-    border-top: solid 1px var(--darken-contrast-100);
+    border-top: solid 1px var(--darken-contrast-05);
     padding-top: 0.5rem;
 }
 
@@ -17,7 +17,7 @@
     color: var(--text-color);
 
     &:hover {
-        background: var(--darken-contrast-100);
+        background: var(--darken-contrast-05);
     }
 
     &:last-child {

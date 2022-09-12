@@ -1,4 +1,5 @@
 import Main from "@/src/components/main/Main";
+import Modal from "@/src/components/modal/Modal";
 import Toast from "@/src/components/toast/Toast";
 import { ReactElement } from "react";
 import { RecoilRoot } from "recoil";
@@ -14,6 +15,7 @@ const App = (): ReactElement => {
             <RecoilRoot>
                 <Main />
                 <Toast />
+                <Modal />
             </RecoilRoot>
         </div>
     );
