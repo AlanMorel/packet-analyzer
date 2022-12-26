@@ -6,6 +6,9 @@
         "jest": true,
         "browser": true
     },
+    "globals": {
+        "NodeJS": true
+    },
     "extends": [
         "eslint:recommended",
         "plugin:import/errors",

@@ -37,7 +37,7 @@ export const useSlotsState = (): ISlot => {
     const [slots, setSlots] = useRecoilState(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
-    const { toast, setToast } = useToastState();
+    const { setToast } = useToastState();
 
     const loadSlot = (index: number): void => {
         const slotsJSON = localStorage.getItem("slots") as string;
