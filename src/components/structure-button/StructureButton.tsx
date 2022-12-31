@@ -1,5 +1,3 @@
-import { ReactElement } from "react";
-
 import "@/src/components/structure-button/StructureButton.scss";
 
 interface Props {
@@ -7,7 +5,9 @@ interface Props {
     onClick: () => void;
 }
 
-const StructureButton = ({ label, onClick }: Props): ReactElement => {
+const StructureButton = (props: Props): JSX.Element => {
+    const { label, onClick } = props;
+
     return (
         <button className="structure-button" onClick={onClick}>
             + {label}

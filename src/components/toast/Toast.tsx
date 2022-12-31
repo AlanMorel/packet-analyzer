@@ -1,10 +1,10 @@
 import { useToastState } from "@/src/atoms/Toast";
 import XButton from "@/src/components/buttons/x-button/XButton";
-import { ReactElement, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import "@/src/components/toast/Toast.scss";
 
-const Toast = (): ReactElement => {
+const Toast = (): JSX.Element => {
     const [active, setActive] = useState(false);
     const [interval, setInterval] = useState<NodeJS.Timeout>();
     const { toast, setToast } = useToastState();

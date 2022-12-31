@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { atom, useRecoilState } from "recoil";
 
 const modalState = atom({
@@ -11,10 +10,10 @@ const modalState = atom({
 
 interface IModal {
     modal: {
-        content: ReactElement;
+        content: JSX.Element;
         open: boolean;
     };
-    openModal: (content: ReactElement) => void;
+    openModal: (content: JSX.Element) => void;
     closeModal: () => void;
 }
 
@@ -29,7 +28,7 @@ export const useModalState = (): IModal => {
         setModal(newModal);
     };
 
-    const openModal = (content: ReactElement): void => {
+    const openModal = (content: JSX.Element): void => {
         const newModal = { ...modal };
         newModal.open = true;
         newModal.content = content;

@@ -1,10 +1,9 @@
 import { useSlotsState } from "@/src/atoms/Slot";
 import { Slot } from "@/src/utils/Interfaces";
-import { ReactElement } from "react";
 
 import "@/src/components/slots/Slots.scss";
 
-const Slots = (): ReactElement => {
+const Slots = (): JSX.Element => {
     const { slots, renameSlot, loadSlot, saveSlot } = useSlotsState();
 
     return (

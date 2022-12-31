@@ -1,11 +1,11 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
 import { parsePacket } from "@/src/utils/PacketUtils";
-import { ReactElement, useMemo } from "react";
+import { useMemo } from "react";
 
 import "@/src/components/outputs/Outputs.scss";
 
-const Outputs = (): ReactElement => {
+const Outputs = (): JSX.Element => {
     const { input } = useInputState();
     const { structure } = useStructureState();
 

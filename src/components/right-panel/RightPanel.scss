@@ -11,6 +11,7 @@
 }
 
 .packet-analyzer__label {
+    margin-right: 0.5rem;
     outline: none;
     border: solid 1px transparent;
     border-radius: 0.25rem;
@@ -18,7 +19,6 @@
     padding: 0.1rem 0.25rem;
     width: 100%;
     font-size: 0.8rem;
-    margin-right: 0.5rem;
 }
 
 .packet-analyzer__section-item {

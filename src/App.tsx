@@ -1,13 +1,12 @@
 import Main from "@/src/components/main/Main";
 import Modal from "@/src/components/modal/Modal";
 import Toast from "@/src/components/toast/Toast";
-import { ReactElement } from "react";
 import { RecoilRoot } from "recoil";
 
 import "@/assets/scss/base.scss";
 import "@/src/App.scss";
 
-const App = (): ReactElement => {
+const App = (): JSX.Element => {
     return (
         <div className="app">
             <h1>Packet Analyzer</h1>

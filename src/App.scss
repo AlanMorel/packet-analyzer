@@ -1,9 +1,9 @@
 .root {
-    min-height: 100vh;
     background: url("@/assets/images/light-background.png"),
         linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
     background-position: bottom left;
     background-repeat: repeat-x;
+    min-height: 100vh;
 
     @media (prefers-color-scheme: dark) {
         background: url("@/assets/images/dark-background.png"),
@@ -14,11 +14,11 @@
 }
 
 .app {
-    max-width: 70rem;
-    padding: 0 1rem;
     margin: auto;
+    padding: 0 1rem;
     padding: 2rem;
     padding-bottom: 30rem;
+    max-width: 70rem;
 
     @media (prefers-color-scheme: dark) {
         padding-bottom: 20rem;

@@ -1,27 +1,27 @@
 .modal {
     position: fixed;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--darken-contrast-35);
-    opacity: 0;
-    visibility: hidden;
+    left: 0;
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--darken-contrast-35);
+    width: 100%;
+    height: 100%;
 
     &--show {
-        opacity: 1;
-        visibility: visible;
         transform: scale(1);
         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+        visibility: visible;
+        opacity: 1;
     }
 }
 
 .modal__title {
-    font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: left;
+    font-size: 1.5rem;
 }
 
 .modal__content {
@@ -29,22 +29,22 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 0.25rem;
     background-color: var(--contrast-white);
     padding: 1rem;
     width: 24rem;
-    border-radius: 0.25rem;
 }
 
 .close-button {
-    float: right;
-    width: 1.5rem;
-    right: 0.75rem;
     top: 0.75rem;
-    line-height: 1.5rem;
-    text-align: center;
-    cursor: pointer;
+    right: 0.75rem;
+    float: right;
     border-radius: 0.25rem;
     background-color: var(--darken-contrast-05);
+    cursor: pointer;
+    width: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
 
     &:hover {
         background-color: var(--darken-contrast-15);

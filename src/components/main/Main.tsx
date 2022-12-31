@@ -1,11 +1,10 @@
 import Input from "@/src/components/input/Input";
 import Outputs from "@/src/components/outputs/Outputs";
 import RightPanel from "@/src/components/right-panel/RightPanel";
-import { ReactElement } from "react";
 
 import "@/src/components/main/Main.scss";
 
-const Main = (): ReactElement => {
+const Main = (): JSX.Element => {
     return (
         <div className="packet-analyzer">
             <Input />

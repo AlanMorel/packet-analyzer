@@ -1,9 +1,9 @@
 import { useModalState } from "@/src/atoms/Modal";
-import { ReactElement, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import "@/src/components/modal/Modal.scss";
 
-const Modal = (): ReactElement => {
+const Modal = (): JSX.Element => {
     const { modal, closeModal } = useModalState();
 
     const modalRef = useRef<HTMLDivElement>(null);

@@ -1,9 +1,8 @@
 import { useInputState } from "@/src/atoms/Input";
-import { ReactElement } from "react";
 
 import "@/src/components/input/Input.scss";
 
-const Input = (): ReactElement => {
+const Input = (): JSX.Element => {
     const { input, setInput } = useInputState();
 
     return (
