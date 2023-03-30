@@ -1,14 +1,12 @@
 const { mergeConfig } = require("vite");
 const path = require("path");
-
 const base = "/packet-analyzer/storybook/";
-
 module.exports = {
-    stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+    stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
     addons: ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/addon-interactions"],
-    framework: "@storybook/react",
-    core: {
-        builder: "@storybook/builder-vite"
+    framework: {
+        name: "@storybook/react-vite",
+        options: {}
     },
     features: {
         storyStoreV7: true
@@ -17,7 +15,9 @@ module.exports = {
         return mergeConfig(config, {
             base,
             resolve: {
-                alias: { "@": path.resolve(path.dirname(__dirname)) }
+                alias: {
+                    "@": path.resolve(path.dirname(__dirname))
+                }
             }
         });
     },
@@ -38,7 +38,9 @@ module.exports = {
             },
             ...config
         };
-
         return updatedConfig;
+    },
+    docs: {
+        autodocs: true
     }
 };
