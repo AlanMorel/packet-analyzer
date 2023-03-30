@@ -9,11 +9,11 @@ cd packet-analyzer
 ```
 
 ```sh
-npm install yarn -g
+npm install pnpm -g
 ```
 
 ```sh
-yarn install
+pnpm install
 ```
 
 Create a `.env` file
@@ -29,7 +29,7 @@ TZ=America/New_York
 Run the app in development:
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 Visit `http://localhost:8087/` to see the app running.
