@@ -17,7 +17,7 @@ export const unitTypes = [
     "opcode"
 ] as const;
 
-export type UnitTypes = typeof unitTypes[number];
+export type UnitTypes = (typeof unitTypes)[number];
 
 export interface Slot {
     input: string;
