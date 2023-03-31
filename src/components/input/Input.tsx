@@ -4,7 +4,7 @@ const Input = (): JSX.Element => {
     const { input, setInput } = useInputState();
 
     return (
-        <div className="packet-analyzer__input mb-4">
+        <div className="mb-4">
             <textarea
                 placeholder="Enter packets, one on each line"
                 value={input}

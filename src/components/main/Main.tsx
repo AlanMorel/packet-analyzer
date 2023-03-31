@@ -4,9 +4,9 @@ import RightPanel from "@/src/components/right-panel/RightPanel";
 
 const Main = (): JSX.Element => {
     return (
-        <div className="packet-analyzer">
+        <div>
             <Input />
-            <div className="packet-analyzer__main flex">
+            <div className="flex">
                 <Outputs />
                 <RightPanel />
             </div>
