@@ -23,7 +23,7 @@ const Modal = (): JSX.Element => {
     return (
         <div
             className={`modal fixed left-0 top-0 h-full w-full scale-[1.1] bg-[--darken-contrast-35] opacity-0 ${
-                modal.open ? "modal--show visible scale-[1] opacity-100" : "invisible"
+                modal.open ? "modal--show visible scale-100 opacity-100" : "invisible"
             }`}
             ref={modalRef}
         >
