@@ -15,7 +15,7 @@ const JSONModal = (): JSX.Element => {
         <>
             <div className="modal__title">JSON Data</div>
             <textarea
-                className="packet-analyzer__raw-data"
+                className="packet-analyzer__raw-data mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full rounded-sm px-2 py-1 font-mono text-sm outline-none"
                 value={stringified}
                 onInput={(event): void => updateStructure(event)}
             />
@@ -32,7 +32,10 @@ const RawData = (): JSX.Element => {
 
     return (
         <div>
-            <button className="packet-analyzer__raw-data-modal-trigger" onClick={onTriggerClick}>
+            <button
+                className="packet-analyzer__raw-data-modal-trigger mt-2 cursor-pointer rounded border-0 px-3 py-1 text-center text-xs transition"
+                onClick={onTriggerClick}
+            >
                 View and Modify JSON
             </button>
         </div>

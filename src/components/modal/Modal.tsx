@@ -24,7 +24,7 @@ const Modal = (): JSX.Element => {
 
     return (
         <div className={`modal ${modal.open ? "modal--show" : ""}`} ref={modalRef}>
-            <div className="modal__content">
+            <div className="modal__content absolute left-1/2 top-1/2 w-96 -translate-x-1/2 -translate-y-1/2 transform rounded-sm p-4">
                 <span className="close-button" onClick={closeModal}>
                     ×
                 </span>

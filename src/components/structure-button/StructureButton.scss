@@ -1,11 +1,6 @@
 .structure-button {
-    margin: 0.25rem;
     border: solid 1px var(--light-border-color);
-    border-radius: 0.25rem;
-    background-color: transparent;
-    cursor: pointer;
     color: var(--text-color);
-    font-size: 0.8rem;
 
     &:hover {
         background-color: var(--darken-contrast-05);

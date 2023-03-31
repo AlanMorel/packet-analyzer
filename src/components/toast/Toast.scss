@@ -1,41 +1,4 @@
-.toast {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transform: translateY(calc(100% + 1rem));
-    transition: all 0.5s ease;
-    opacity: 0;
-    z-index: 101;
-    padding: 0 1rem;
-    text-align: center;
-    user-select: none;
-
-    &.toast--active {
-        transform: translateY(-2rem);
-        opacity: 1;
-    }
-}
-
-.toast__content {
-    display: inline-block;
-    position: relative;
-    border-radius: 0.25rem;
-    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 50%);
-    background: rgb(0 0 0 / 75%);
-    padding: 0.75rem 2rem;
-    color: white;
-    font-size: 1.1rem;
-    backdrop-filter: blur(0.5rem);
-}
-
 .toast__bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    height: 0.25rem;
-
     .toast--active & {
         animation: load 5s;
         animation-timing-function: linear;

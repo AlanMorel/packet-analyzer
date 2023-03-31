@@ -1,26 +1,12 @@
 .packet-analyzer__structures {
     border-top: solid 1px var(--darken-contrast-05);
-    padding-top: 0.5rem;
-}
-
-.packet-analyzer__options {
-    display: none;
 }
 
 .packet-analyzer__option {
-    margin-right: 0.1rem;
     border: solid 1px var(--text-color);
-    border-style: none;
-    border-radius: 0.25rem;
-    background: none;
-    cursor: pointer;
     color: var(--text-color);
 
     &:hover {
         background: var(--darken-contrast-05);
-    }
-
-    &:last-child {
-        margin-right: 0;
     }
 }

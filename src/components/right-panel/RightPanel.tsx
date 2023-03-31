@@ -7,11 +7,11 @@ import "@/src/components/right-panel/RightPanel.scss";
 
 const RightPanel = (): JSX.Element => {
     return (
-        <ul className="packet-analyzer__right-panel">
-            <li className="packet-analyzer__section">
+        <ul className="max-w-[18rem]">
+            <li className="packet-analyzer__section mb-4 rounded-sm px-2 py-1">
                 <Slots />
             </li>
-            <li className="packet-analyzer__section">
+            <li className="packet-analyzer__section mb-4 rounded-sm px-2 py-1">
                 <StructureButtons />
                 <Structures />
                 <RawData />

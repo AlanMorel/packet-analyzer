@@ -8,7 +8,7 @@ const Main = (): JSX.Element => {
     return (
         <div className="packet-analyzer">
             <Input />
-            <div className="packet-analyzer__main">
+            <div className="packet-analyzer__main flex">
                 <Outputs />
                 <RightPanel />
             </div>

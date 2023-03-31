@@ -3,8 +3,6 @@ import { useStructureState } from "@/src/atoms/Structure";
 import { parsePacket } from "@/src/utils/PacketUtils";
 import { useMemo } from "react";
 
-import "@/src/components/outputs/Outputs.scss";
-
 const Outputs = (): JSX.Element => {
     const { input } = useInputState();
     const { structure } = useStructureState();
@@ -14,9 +12,15 @@ const Outputs = (): JSX.Element => {
     }, [input, structure]);
 
     return (
-        <div className="packet-analyzer__outputs">
+        <div className="mr-4 flex-1">
             {output.map((packet: string, index: number) => (
-                <textarea disabled={true} wrap="off" value={packet} key={index} />
+                <textarea
+                    disabled={true}
+                    wrap="off"
+                    value={packet}
+                    key={index}
+                    className="mb-4 min-h-[20rem] border-0 bg-black bg-opacity-50 px-2 py-1 font-mono text-sm"
+                />
             ))}
         </div>
     );

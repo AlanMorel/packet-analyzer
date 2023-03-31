@@ -20,18 +20,9 @@
         "jsx": "react-jsx",
         "baseUrl": "./",
         "paths": {
-            "@/*": [
-                "./*"
-            ]
+            "@/*": ["./*"]
         }
     },
-    "include": ["src", "src/svg.d.ts"],
-    "exclude": [
-        "node_modules",
-        "dist",
-    ],
-    "references": [{
-         "path": "./tsconfig.node.json" 
-        }
-    ]
+    "include": ["src", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules", "dist"]
 }

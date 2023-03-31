@@ -33,11 +33,15 @@ const Toast = (): JSX.Element => {
     };
 
     return (
-        <div className={`toast ${active ? "toast--active" : ""}`}>
-            <div className="toast__content">
-                <XButton onClick={(): void => closeToast()} />
+        <div
+            className={`z-101 fixed bottom-0 left-0 right-0 translate-y-full transform select-none px-4 text-center opacity-0 transition-all duration-500 ease-out ${
+                active ? "toast--active -translate-y-8 transform opacity-100" : ""
+            }`}
+        >
+            <div className="toast__content relative inline-block rounded-md bg-black bg-opacity-75 px-8 py-3 text-lg text-white shadow-lg backdrop-blur">
+                <XButton onClick={(): void => closeToast()} className="right--1 top--1 bg-red-600 hover:bg-red-700" />
                 {toast}
-                <div className="toast__bar"></div>
+                <div className="toast__bar absolute bottom-0 left-0 h-1 bg-white"></div>
             </div>
         </div>
     );

@@ -1,13 +1,11 @@
 import { useStructureState } from "@/src/atoms/Structure";
-
 import StructureButton from "@/src/components/structure-button/StructureButton";
-import "@/src/components/structure-buttons/StructureButtons.scss";
 
 const StructureButtons = (): JSX.Element => {
     const { addStructure } = useStructureState();
 
     return (
-        <div className="packet-analyzer__buttons">
+        <div className="packet-analyzer__buttons mt-2 flex flex-wrap justify-center pb-2">
             <StructureButton label="Opcode" onClick={(): void => addStructure("opcode")} />
             <StructureButton label="Byte" onClick={(): void => addStructure("byte")} />
             <StructureButton label="Short" onClick={(): void => addStructure("short")} />

@@ -1,36 +1,10 @@
-.packet-analyzer__right-panel {
-    max-width: 18rem;
-}
-
 .packet-analyzer__section {
-    margin-bottom: 1rem;
-    border-radius: 0.25rem;
     background-color: var(--light-component-background-color);
-    padding: 0.25rem 0.5rem;
     color: var(--text-color);
 }
 
-.packet-analyzer__label {
-    margin-right: 0.5rem;
-    outline: none;
-    border: solid 1px transparent;
-    border-radius: 0.25rem;
-    background: none;
-    padding: 0.1rem 0.25rem;
-    width: 100%;
-    font-size: 0.8rem;
-}
-
 .packet-analyzer__section-item {
-    display: flex;
-    position: relative;
-    padding: 0.25rem 0;
-
     &:hover {
-        .packet-analyzer__options {
-            display: flex;
-        }
-
         .packet-analyzer__label {
             background-color: var(--darken-contrast-05);
         }
