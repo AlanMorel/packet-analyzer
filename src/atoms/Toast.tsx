@@ -1,17 +1,14 @@
-import { atom, SetterOrUpdater, useRecoilState } from "recoil";
+import { atom, useAtom } from "jotai";
 
-const toastState = atom({
-    key: "toastState",
-    default: ""
-});
+const toastAtom = atom<string>("");
 
 interface ITtoast {
     toast: string;
-    setToast: SetterOrUpdater<string>;
+    setToast: (value: string) => void;
 }
 
 export const useToastState = (): ITtoast => {
-    const [toast, setToast] = useRecoilState(toastState);
+    const [toast, setToast] = useAtom(toastAtom);
 
     return { toast, setToast };
 };

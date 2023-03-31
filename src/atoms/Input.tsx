@@ -1,18 +1,15 @@
 import { defaultPacket } from "@/src/utils/Defaults";
-import { atom, SetterOrUpdater, useRecoilState } from "recoil";
+import { atom, useAtom } from "jotai";
 
-const inputState = atom({
-    key: "inputState",
-    default: defaultPacket
-});
+const inputAtom = atom(defaultPacket);
 
 interface IInput {
     input: string;
-    setInput: SetterOrUpdater<string>;
+    setInput: (value: string) => void;
 }
 
 export const useInputState = (): IInput => {
-    const [input, setInput] = useRecoilState(inputState);
+    const [input, setInput] = useAtom(inputAtom);
 
     return { input, setInput };
 };

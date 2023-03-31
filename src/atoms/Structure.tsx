@@ -1,16 +1,13 @@
 import { defaultStructure } from "@/src/utils/Defaults";
 import { Structure, UnitTypes } from "@/src/utils/Interfaces";
+import { atom, useAtom } from "jotai";
 import { FormEvent } from "react";
-import { atom, SetterOrUpdater, useRecoilState } from "recoil";
 
-const structureState = atom({
-    key: "structureState",
-    default: defaultStructure
-});
+const structureAtom = atom<Structure[]>(defaultStructure);
 
 interface IStructure {
     structure: Structure[];
-    setStructure: SetterOrUpdater<Structure[]>;
+    setStructure: (value: Structure[]) => void;
     addStructure: (unit: UnitTypes) => void;
     deleteStructure: (index: number) => void;
     onLabelRename: (event: FormEvent<EventTarget>, index: number) => void;
@@ -19,7 +16,7 @@ interface IStructure {
 }
 
 export const useStructureState = (): IStructure => {
-    const [structure, setStructure] = useRecoilState(structureState);
+    const [structure, setStructure] = useAtom(structureAtom);
 
     const addStructure = (unit: UnitTypes): void => {
         const newValue: Structure = {

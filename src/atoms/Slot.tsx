@@ -3,8 +3,8 @@ import { useStructureState } from "@/src/atoms/Structure";
 import { useToastState } from "@/src/atoms/Toast";
 import { defaultSlots, MAX_SLOT_SIZE } from "@/src/utils/Defaults";
 import { Slot } from "@/src/utils/Interfaces";
+import { atom, useAtom } from "jotai";
 import { FormEvent } from "react";
-import { atom, SetterOrUpdater, useRecoilState } from "recoil";
 
 const getSlots = (): Slot[] => {
     let slotsJSON = localStorage.getItem("slots");
@@ -20,21 +20,20 @@ const getSlots = (): Slot[] => {
     return slotsDefault;
 };
 
-const slotState = atom({
-    key: "slotState",
-    default: getSlots()
-});
+type SlotState = Slot[];
+
+const slotState = atom<SlotState>(getSlots());
 
 interface ISlot {
     slots: Slot[];
-    setSlots: SetterOrUpdater<Slot[]>;
+    setSlots: (value: Slot[]) => void;
     loadSlot: (index: number) => void;
     saveSlot: (index: number) => void;
     renameSlot: (event: FormEvent<EventTarget>, index: number) => void;
 }
 
 export const useSlotsState = (): ISlot => {
-    const [slots, setSlots] = useRecoilState(slotState);
+    const [slots, setSlots] = useAtom(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
     const { setToast } = useToastState();
