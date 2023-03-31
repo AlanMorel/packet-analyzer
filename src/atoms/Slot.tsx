@@ -1,6 +1,6 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
-import { useToastState } from "@/src/atoms/Toast";
+import { showToast } from "@/src/components/toast/Toasts";
 import { defaultSlots, MAX_SLOT_SIZE } from "@/src/utils/Defaults";
 import { Slot } from "@/src/utils/Interfaces";
 import { atom, useAtom } from "jotai";
@@ -36,7 +36,6 @@ export const useSlotsState = (): ISlot => {
     const [slots, setSlots] = useAtom(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
-    const { setToast } = useToastState();
 
     const loadSlot = (index: number): void => {
         const slotsJSON = localStorage.getItem("slots") as string;
@@ -49,7 +48,7 @@ export const useSlotsState = (): ISlot => {
         setInput(newSlots[index].input);
         setStructure(newSlots[index].structure);
 
-        setToast(`Slot ${index + 1} "${newSlots[index].label}" loaded.`);
+        showToast(`Slot ${index + 1} "${newSlots[index].label}" loaded.`);
     };
 
     const saveSlot = (index: number): void => {
@@ -65,7 +64,7 @@ export const useSlotsState = (): ISlot => {
         const slotsJSON = JSON.stringify(newSlots);
         localStorage.setItem("slots", slotsJSON);
 
-        setToast(`Slot ${index + 1} "${newSlots[index].label}" saved.`);
+        showToast(`Slot ${index + 1} "${newSlots[index].label}" saved.`);
     };
 
     const renameSlot = (event: FormEvent<EventTarget>, index: number): void => {

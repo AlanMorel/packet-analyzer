@@ -1,6 +1,6 @@
 import Main from "@/src/components/main/Main";
 import Modal from "@/src/components/modal/Modal";
-import Toast from "@/src/components/toast/Toast";
+import { Toaster } from "react-hot-toast";
 
 import "@/src/globals.css";
 import "@/src/styles/base.scss";
@@ -13,7 +13,7 @@ export default function App(): JSX.Element {
                 Use the packet analyzer to help you figure out and define the structures of packets
             </h2>
             <Main />
-            <Toast />
+            <Toaster position="bottom-center" />
             <Modal />
         </div>
     );

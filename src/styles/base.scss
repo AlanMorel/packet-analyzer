@@ -44,25 +44,6 @@ textarea {
     }
 }
 
-.toast__bar {
-    .toast--active & {
-        animation: load 5s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-}
-
-@keyframes load {
-    from {
-        width: 100%;
-    }
-
-    to {
-        width: 0%;
-    }
-}
-
 .modal {
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 
