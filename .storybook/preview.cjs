@@ -1,6 +1,5 @@
-import "@/assets/scss/colors.scss";
-import "@/assets/scss/fonts.scss";
-import "@/assets/scss/base.scss";
+import "@/src/globals.css";
+import "@/src/styles/base.scss";
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },

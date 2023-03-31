@@ -3,18 +3,6 @@
 body {
     font-family: variables.$text-font;
     font-synthesis: none;
-    background: url("@/assets/images/light-background.png"),
-        linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
-    background-position: bottom left;
-    background-repeat: repeat-x;
-    min-height: 100vh;
-
-    @media (prefers-color-scheme: dark) {
-        background: url("@/assets/images/dark-background.png"),
-            linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%);
-        background-position: bottom left;
-        background-repeat: repeat-x;
-    }
 }
 
 h1 {
@@ -33,6 +21,21 @@ textarea {
     padding: 0.25rem 0.5rem;
     width: 100%;
     resize: vertical;
+}
+
+.root {
+    background: url("@/assets/images/light-background.png"),
+        linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%);
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    min-height: 100vh;
+
+    @media (prefers-color-scheme: dark) {
+        background: url("@/assets/images/dark-background.png"),
+            linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%);
+        background-position: bottom left;
+        background-repeat: repeat-x;
+    }
 }
 
 .app {
