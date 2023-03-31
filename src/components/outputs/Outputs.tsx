@@ -19,7 +19,7 @@ const Outputs = (): JSX.Element => {
                     wrap="off"
                     value={packet}
                     key={index}
-                    className="mb-4 min-h-[20rem] border-0 bg-black bg-opacity-50 px-2 py-1 font-mono text-sm"
+                    className="mb-4 min-h-[20rem] border-0 bg-black bg-opacity-50 px-2 py-1 font-mono text-sm text-white"
                 />
             ))}
         </div>

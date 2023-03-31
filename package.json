@@ -17,7 +17,6 @@
         "preview": "vite preview",
         "storybook": "storybook dev",
         "storybook:build": "storybook build --output-dir ./dist/storybook",
-        "stylelint": "stylelint src/**/*.{css,scss} --fix",
         "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
     },
     "dependencies": {
@@ -68,12 +67,6 @@
         "prettier": "^2.8.7",
         "prettier-plugin-tailwindcss": "^0.2.6",
         "sass": "^1.60.0",
-        "stylelint": "^15.3.0",
-        "stylelint-config-concentric-order": "^5.1.0",
-        "stylelint-config-css-modules": "^4.2.0",
-        "stylelint-config-prettier": "^9.0.5",
-        "stylelint-config-standard-scss": "^7.0.1",
-        "stylelint-prettier": "^3.0.0",
         "ts-node": "^10.9.1"
     }
 }

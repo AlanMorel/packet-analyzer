@@ -1,3 +1,22 @@
+@font-face {
+    font-family: moranga;
+    font-display: swap;
+    src: url("/assets/fonts/moranga-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    font-display: swap;
+    src: url("/assets/fonts/inter-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+$primary-font: "moranga", sans-serif;
+$text-font: "inter", sans-serif;
+
 $light-background-color: #49b4ef;
 $dark-background-color: #2e2c52;
 

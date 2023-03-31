@@ -1,5 +1,4 @@
 import { useStructureState } from "@/src/atoms/Structure";
-import "@/src/components/structures/Structures.scss";
 import UnitLabel from "@/src/components/unit-label/UnitLabel";
 import useSortable from "@/src/mixins/Sortable";
 import { Structure } from "@/src/utils/Interfaces";
@@ -13,10 +12,10 @@ const Structures = (): JSX.Element => {
     const { onDragStart, onDragOver } = useSortable(list, swapStructures);
 
     return (
-        <ul className="packet-analyzer__structures pt-2" ref={list}>
+        <ul className="border-t border-[--darken-contrast-05] pt-2" ref={list}>
             {structure.map((struct: Structure, index: number) => (
                 <li
-                    className="packet-analyzer__section-item group relative flex px-0 py-1"
+                    className="group relative flex cursor-grab px-0 py-1 active:cursor-grabbing"
                     key={index}
                     draggable="true"
                     onDragStart={onDragStart}
@@ -25,13 +24,13 @@ const Structures = (): JSX.Element => {
                     <UnitLabel unit={struct.unit.toLowerCase()} />
                     <input
                         type="text"
-                        className="packet-analyzer__label mr-2 w-full rounded border border-solid border-transparent bg-transparent px-1 py-[0.1rem] text-sm outline-none"
+                        className="mr-2 w-full rounded border border-solid border-transparent bg-transparent px-1 py-[0.1rem] text-sm outline-none group-hover:bg-[--darken-contrast-05]"
                         value={struct.label}
                         onInput={(event): void => onLabelRename(event, index)}
                     />
                     <div className="hidden group-hover:flex">
                         <button
-                            className="packet-analyzer__option mr-1 cursor-pointer rounded border-none bg-transparent px-2 text-sm last:mr-0"
+                            className="mr-1 cursor-pointer rounded border  border-none border-[--text-color] bg-transparent px-2 text-sm text-[--text-color] last:mr-0 hover:bg-[--darken-contrast-05]"
                             onClick={(): void => deleteStructure(index)}
                         >
                             ×

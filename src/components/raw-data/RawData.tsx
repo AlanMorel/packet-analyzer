@@ -2,8 +2,6 @@ import { useModalState } from "@/src/atoms/Modal";
 import { useStructureState } from "@/src/atoms/Structure";
 import { useMemo } from "react";
 
-import "@/src/components/raw-data/RawData.scss";
-
 const JSONModal = (): JSX.Element => {
     const { structure, updateStructure } = useStructureState();
 
@@ -13,9 +11,9 @@ const JSONModal = (): JSX.Element => {
 
     return (
         <>
-            <div className="modal__title">JSON Data</div>
+            <div className="mb-4 text-left text-lg font-bold">JSON Data</div>
             <textarea
-                className="packet-analyzer__raw-data mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full rounded-sm px-2 py-1 font-mono text-sm outline-none"
+                className="mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full rounded-sm border border-[--darken-contrast-05] bg-[--darken-contrast-05] px-2 py-1 font-mono text-xs text-[--contrast-black] outline-none"
                 value={stringified}
                 onInput={(event): void => updateStructure(event)}
             />
@@ -31,9 +29,9 @@ const RawData = (): JSX.Element => {
     };
 
     return (
-        <div>
+        <div className="mb-1">
             <button
-                className="packet-analyzer__raw-data-modal-trigger mt-2 cursor-pointer rounded border-0 px-3 py-1 text-center text-xs transition"
+                className="mt-2 cursor-pointer rounded border-0 bg-[--darken-contrast-05] px-3 py-1 text-center text-xs text-[--contrast-black] transition hover:bg-[--darken-contrast-15]"
                 onClick={onTriggerClick}
             >
                 View and Modify JSON

@@ -1,7 +1,5 @@
 import { useInputState } from "@/src/atoms/Input";
 
-import "@/src/components/input/Input.scss";
-
 const Input = (): JSX.Element => {
     const { input, setInput } = useInputState();
 
@@ -12,7 +10,7 @@ const Input = (): JSX.Element => {
                 value={input}
                 wrap="off"
                 onChange={(event): void => setInput(event.target.value)}
-                className="min-h-[6rem] px-2 font-mono text-sm"
+                className="min-h-[6rem] bg-[--light-component-background-color] px-2 font-mono text-sm text-[--text-color]"
             />
         </div>
     );
