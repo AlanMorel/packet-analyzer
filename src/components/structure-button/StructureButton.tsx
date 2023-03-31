@@ -8,7 +8,7 @@ const StructureButton = (props: Props): JSX.Element => {
 
     return (
         <button
-            className="m-1 cursor-pointer rounded border border-[--light-border-color] bg-transparent px-1 text-sm text-[--text-color] hover:bg-[--darken-contrast-05] hover:text-[--contrast-black]"
+            className="m-1 cursor-pointer rounded border border-[--light-border-color] bg-transparent px-1 text-sm text-[--contrast-black] hover:bg-[--darken-contrast-05] hover:text-[--contrast-black]"
             onClick={onClick}
         >
             + {label}

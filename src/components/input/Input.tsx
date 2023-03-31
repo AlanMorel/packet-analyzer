@@ -10,7 +10,7 @@ const Input = (): JSX.Element => {
                 value={input}
                 wrap="off"
                 onChange={(event): void => setInput(event.target.value)}
-                className="min-h-[6rem] bg-[--light-component-background-color] px-2 font-mono text-sm text-[--text-color]"
+                className="min-h-[6rem] bg-[--light-component-background-color] px-2 font-mono text-sm text-[--contrast-black]"
             />
         </div>
     );

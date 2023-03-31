@@ -1,22 +1,3 @@
-@font-face {
-    font-family: moranga;
-    font-display: swap;
-    src: url("/assets/fonts/moranga-regular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: Inter;
-    font-display: swap;
-    src: url("/assets/fonts/inter-regular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-$primary-font: "moranga", sans-serif;
-$text-font: "inter", sans-serif;
-
 $light-background-color: #49b4ef;
 $dark-background-color: #2e2c52;
 
@@ -34,26 +15,22 @@ $lighten-95: rgba($white-color, 0.95);
 
 :root {
     --background-color: #{$light-background-color};
-    --text-color: #{$black-color};
-    --contrast-white: #{$white-color};
     --contrast-black: #{$black-color};
+    --contrast-white: #{$white-color};
     --darken-contrast-05: #{$darken-05};
     --darken-contrast-15: #{$darken-15};
     --darken-contrast-35: #{$darken-35};
     --light-border-color: #{$darken-15};
     --light-component-background-color: #{$lighten-95};
-    --dark-component-background-color: #{$darken-35};
 
     @media (prefers-color-scheme: dark) {
         --background-color: #{$dark-background-color};
-        --text-color: #{$white-color};
-        --contrast-white: #{$black-color};
         --contrast-black: #{$white-color};
+        --contrast-white: #{$black-color};
         --darken-contrast-05: #{$lighten-05};
         --darken-contrast-15: #{$lighten-15};
         --darken-contrast-35: #{$lighten-35};
         --light-border-color: #{$lighten-15};
         --light-component-background-color: #{$darken-35};
-        --dark-component-background-color: #{$lighten-95};
     }
 }

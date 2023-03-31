@@ -5,8 +5,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["InterVariable", ...defaultTheme.fontFamily.sans],
-                header: ["Plus Jakarta SansVariable"]
+                sans: ["Inter", ...defaultTheme.fontFamily.sans],
+                header: ["moranga"]
             },
             animation: {
                 enter: "fade-in 200ms ease-out, scale-up 200ms ease-out",

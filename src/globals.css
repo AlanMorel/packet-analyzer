@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.grecaptcha-badge {
-    visibility: hidden;
+@font-face {
+    font-family: moranga;
+    font-display: swap;
+    src: url("/assets/fonts/moranga-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Inter;
+    font-display: swap;
+    src: url("/assets/fonts/inter-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
 }

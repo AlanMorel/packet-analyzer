@@ -30,7 +30,7 @@ const Structures = (): JSX.Element => {
                     />
                     <div className="hidden group-hover:flex">
                         <button
-                            className="mr-1 cursor-pointer rounded border  border-none border-[--text-color] bg-transparent px-2 text-sm text-[--text-color] last:mr-0 hover:bg-[--darken-contrast-05]"
+                            className="mr-1 cursor-pointer rounded border  border-none border-[--contrast-black] bg-transparent px-2 text-sm text-[--contrast-black] last:mr-0 hover:bg-[--darken-contrast-05]"
                             onClick={(): void => deleteStructure(index)}
                         >
                             ×

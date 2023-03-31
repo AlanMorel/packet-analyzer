@@ -29,7 +29,7 @@ const Modal = (): JSX.Element => {
         >
             <div className="absolute left-1/2 top-1/2 w-[30rem] -translate-x-1/2 -translate-y-1/2 transform rounded bg-[--contrast-white] p-4">
                 <span
-                    className="close-button right-3 top-3 float-right h-6 w-6 cursor-pointer rounded bg-[--darken-contrast-05] text-center transition hover:bg-[--darken-contrast-15]"
+                    className="right-3 top-3 float-right h-6 w-6 cursor-pointer rounded bg-[--darken-contrast-05] text-center text-[--contrast-black] transition hover:bg-[--darken-contrast-15]"
                     onClick={closeModal}
                 >
                     ×

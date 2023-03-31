@@ -1,16 +1,7 @@
 @use "@/src/styles/variables.scss";
 
 body {
-    font-family: variables.$text-font;
     font-synthesis: none;
-}
-
-h1 {
-    font-family: variables.$primary-font;
-}
-
-h2 {
-    font-family: variables.$text-font;
 }
 
 textarea {
@@ -35,11 +26,6 @@ textarea {
             linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%);
         background-position: bottom left;
         background-repeat: repeat-x;
-    }
-}
-
-.app {
-    @media (prefers-color-scheme: dark) {
         padding-bottom: 20rem;
     }
 }
