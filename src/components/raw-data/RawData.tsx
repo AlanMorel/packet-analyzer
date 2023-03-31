@@ -13,7 +13,7 @@ const JSONModal = (): JSX.Element => {
         <>
             <div className="mb-4 text-left text-lg font-bold text-[--contrast-black]">JSON Data</div>
             <textarea
-                className="mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full rounded border border-[--darken-contrast-05] bg-[--darken-contrast-05] px-2 py-1 font-mono text-xs text-[--contrast-black] outline-none"
+                className="mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full resize-y rounded  border  border-[--darken-contrast-05] bg-[--darken-contrast-05] px-2 py-1 font-mono text-xs text-[--contrast-black] outline-none"
                 value={stringified}
                 onInput={(event): void => updateStructure(event)}
             />
