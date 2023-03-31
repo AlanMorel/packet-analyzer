@@ -3,7 +3,7 @@ const path = require("path");
 const base = "/packet-analyzer/storybook/";
 
 module.exports = {
-    stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+    stories: ["../src/**/*.stories.@(ts|tsx)"],
     addons: [
         "@storybook/addon-links",
         "@storybook/addon-essentials",
