@@ -1,3 +1,5 @@
+"use client";
+
 import { useInputState } from "@/src/atoms/Input";
 
 const Input = (): JSX.Element => {

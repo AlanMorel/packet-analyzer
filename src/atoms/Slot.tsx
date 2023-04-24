@@ -6,16 +6,23 @@ import { Slot } from "@/src/utils/Interfaces";
 import { atom, useAtom } from "jotai";
 import { FormEvent } from "react";
 
+const storage = typeof window !== "undefined" ? localStorage : undefined;
+
 const getSlots = (): Slot[] => {
-    let slotsJSON = localStorage.getItem("slots");
+    const slotsDefault = defaultSlots();
+
+    if (!storage) {
+        return slotsDefault;
+    }
+
+    let slotsJSON = storage.getItem("slots");
 
     if (slotsJSON) {
         return JSON.parse(slotsJSON).slice(0, MAX_SLOT_SIZE);
     }
 
-    const slotsDefault = defaultSlots();
     slotsJSON = JSON.stringify(slotsDefault);
-    localStorage.setItem("slots", slotsJSON);
+    storage.setItem("slots", slotsJSON);
 
     return slotsDefault;
 };

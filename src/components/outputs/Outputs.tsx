@@ -1,3 +1,5 @@
+"use client";
+
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
 import { parsePacket } from "@/src/utils/PacketUtils";

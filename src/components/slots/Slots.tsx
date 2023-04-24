@@ -1,3 +1,5 @@
+"use client";
+
 import { useSlotsState } from "@/src/atoms/Slot";
 import { Slot } from "@/src/utils/Interfaces";
 
@@ -8,7 +10,7 @@ const Slots = (): JSX.Element => {
         <ul>
             {slots.map((slot: Slot, index: number) => (
                 <li className="group relative flex px-0 py-1" key={index}>
-                    <div className="mr-2 min-w-[2.75rem] rounded bg-[--darken-contrast-05] px-1 py-1 text-xs font-bold text-[--contrast-black]">
+                    <div className="mr-2 min-w-[2.75rem] rounded bg-[--darken-contrast-05] px-1 py-1 text-xs text-[--contrast-black]">
                         Slot {index + 1}
                     </div>
                     <input

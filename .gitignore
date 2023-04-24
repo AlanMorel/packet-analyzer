@@ -8,6 +8,9 @@ dist
 # log files
 *.log
 
+# next.js
+/.next/
+
 # editor directories and files
 .vscode
 

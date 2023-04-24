@@ -7,33 +7,30 @@
         "browser": true
     },
     "globals": {
-        "NodeJS": true,
-        "JSX": true,
+        "page": true,
+        "browser": true,
+        "context": true,
+        "jestPuppeteer": true,
+        "JSX": "readonly",
         "React": true
     },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "import", "jsx-a11y", "@typescript-eslint", "security", "prettier", "eslint-plugin-storybook"],
     "extends": [
         "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:security/recommended",
-        "plugin:jsx-a11y/recommended",
-        "prettier"
+        "next/core-web-vitals",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": ["./tsconfig.json"]
     },
-    "plugins": ["react", "import", "jsx-a11y", "@typescript-eslint", "security", "prettier", "eslint-plugin-storybook"],
     "rules": {
-        "react/react-in-jsx-scope": "off",
-        "react/no-unknown-property": "off",
-        "security/detect-object-injection": "off",
         "no-console": "warn",
         "no-debugger": "warn",
         "@typescript-eslint/explicit-function-return-type": ["error"],
@@ -62,18 +59,7 @@
         "eol-last": "error",
         "no-undef": 1,
         "no-prototype-builtins": 1,
-        "prettier/prettier": ["error"],
-        "jsx-a11y/click-events-have-key-events": "off",
-        "jsx-a11y/no-static-element-interactions": "off",
-        "jsx-a11y/no-noninteractive-element-interactions": "off"
+        "prettier/prettier": ["error"]
     },
-    "ignorePatterns": ["**/*.html"],
-    "settings": {
-        "import/resolver": {
-            "typescript": {}
-        },
-        "react": {
-            "version": "detect"
-        }
-    }
+    "ignorePatterns": [".next"]
 }

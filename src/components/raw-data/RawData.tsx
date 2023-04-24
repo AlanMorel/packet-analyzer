@@ -1,3 +1,5 @@
+"use client";
+
 import { useModalState } from "@/src/atoms/Modal";
 import { useStructureState } from "@/src/atoms/Structure";
 import { useMemo } from "react";

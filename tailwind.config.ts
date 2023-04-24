@@ -1,11 +1,11 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
-    content: ["./src/**/*.{ts,tsx}"],
+    content: ["./app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
     theme: {
         extend: {
             fontFamily: {
-                sans: ["Inter", ...defaultTheme.fontFamily.sans],
+                text: ["var(--font-inter)", "Open Sans", ...defaultTheme.fontFamily.sans],
                 header: ["moranga"]
             },
             animation: {

@@ -1,6 +1,3 @@
-$light-background-color: #49b4ef;
-$dark-background-color: #2e2c52;
-
 $white-color: #fff;
 $black-color: #000;
 
@@ -14,7 +11,6 @@ $lighten-35: rgba($white-color, 0.35);
 $lighten-95: rgba($white-color, 0.95);
 
 :root {
-    --background-color: #{$light-background-color};
     --contrast-black: #{$black-color};
     --contrast-white: #{$white-color};
     --darken-contrast-05: #{$darken-05};
@@ -24,7 +20,6 @@ $lighten-95: rgba($white-color, 0.95);
     --light-component-background-color: #{$lighten-95};
 
     @media (prefers-color-scheme: dark) {
-        --background-color: #{$dark-background-color};
         --contrast-black: #{$white-color};
         --contrast-white: #{$black-color};
         --darken-contrast-05: #{$lighten-05};

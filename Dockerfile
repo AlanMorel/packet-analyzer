@@ -12,7 +12,9 @@ RUN pnpm install --frozen-lockfile --prod
 
 COPY . .
 
-RUN pnpm build && pnpm storybook:build
+RUN pnpm ts:check && pnpm build
+
+ENV NODE_ENV production
 
 FROM nginx:alpine as base
 

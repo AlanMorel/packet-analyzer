@@ -1,3 +1,5 @@
+"use client";
+
 import { useModalState } from "@/src/atoms/Modal";
 import { useEffect, useRef } from "react";
 

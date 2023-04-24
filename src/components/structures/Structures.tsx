@@ -1,3 +1,5 @@
+"use client";
+
 import { useStructureState } from "@/src/atoms/Structure";
 import UnitLabel from "@/src/components/unit-label/UnitLabel";
 import useSortable from "@/src/mixins/Sortable";

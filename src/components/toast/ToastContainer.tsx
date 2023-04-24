@@ -26,7 +26,7 @@ const ToastContainer = (props: Props): JSX.Element => {
             <div className="mx-3 text-sm font-normal">{message}</div>
             <button
                 type="button"
-                className="-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-neutral-800 p-1.5 font-bold text-white hover:bg-slate-100 hover:text-gray-900 focus:ring-2 focus:ring-slate-300"
+                className="-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-neutral-800 p-1.5 text-white hover:bg-slate-100 hover:text-gray-900 focus:ring-2 focus:ring-slate-300"
                 data-dismiss-target="#toast-default"
                 aria-label="Close"
                 onClick={dismiss}
