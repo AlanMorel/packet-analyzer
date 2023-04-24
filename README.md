@@ -22,7 +22,6 @@ Create a `.env` file
 VERSION=0
 NODE_ENV=development
 PORT=8087
-URL=http://packetanalyzer.localhost
 TZ=America/New_York
 ```
 

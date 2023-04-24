@@ -23,7 +23,8 @@
         "plugin:security/recommended",
         "next/core-web-vitals",
         "plugin:react/recommended",
-        "plugin:react-hooks/recommended"
+        "plugin:react-hooks/recommended",
+        "plugin:storybook/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",

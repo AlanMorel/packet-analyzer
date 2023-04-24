@@ -1,5 +1,13 @@
 @use "@/src/styles/variables.scss";
 
+@font-face {
+    font-family: moranga;
+    font-display: swap;
+    src: url("/packet-analyzer/fonts/moranga-regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     min-height: 100vh;
     background: url("/packet-analyzer/images/light-background.png"),

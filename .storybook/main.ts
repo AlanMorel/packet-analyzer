@@ -1,8 +1,7 @@
-const { mergeConfig } = require("vite");
-const path = require("path");
+import type { StorybookConfig } from "@storybook/nextjs";
 const base = "/packet-analyzer/storybook/";
 
-module.exports = {
+const config: StorybookConfig = {
     stories: ["../src/**/*.stories.@(ts|tsx)"],
     addons: [
         "@storybook/addon-links",
@@ -13,32 +12,15 @@ module.exports = {
             options: {
                 postCss: true
             }
-        }
+        },
+        "@storybook/addon-actions"
     ],
     framework: {
-        name: "@storybook/react-vite",
+        name: "@storybook/nextjs",
         options: {}
     },
-    features: {
-        storyStoreV7: true
-    },
-    async viteFinal(config) {
-        return mergeConfig(config, {
-            base,
-            resolve: {
-                alias: {
-                    "@": path.resolve(path.dirname(__dirname))
-                }
-            }
-        });
-    },
-    managerHead: (head, { configType }) => {
-        if (configType === "PRODUCTION") {
-            return `
-            ${head}
-            <base href="${base}">
-          `;
-        }
+    docs: {
+        autodocs: "tag"
     },
     webpackFinal: async config => {
         const updatedConfig = {
@@ -50,8 +32,7 @@ module.exports = {
             ...config
         };
         return updatedConfig;
-    },
-    docs: {
-        autodocs: true
     }
 };
+
+export default config;
