@@ -1,4 +1,5 @@
 import Main from "@/src/components/main/Main";
+import { withMetadata } from "@/src/server/MetadataHelper";
 
 export default async function HomePage(): Promise<JSX.Element> {
     return (
@@ -11,3 +12,8 @@ export default async function HomePage(): Promise<JSX.Element> {
         </div>
     );
 }
+
+export const metadata = withMetadata({
+    title: "Packet Analyzer",
+    description: "Use the packet analyzer to help you figure out and define the structures of packets"
+});
