@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/nextjs";
+
 const base = "/packet-analyzer/storybook/";
 
 const config: StorybookConfig = {
@@ -12,8 +13,7 @@ const config: StorybookConfig = {
             options: {
                 postCss: true
             }
-        },
-        "@storybook/addon-actions"
+        }
     ],
     framework: {
         name: "@storybook/nextjs",
