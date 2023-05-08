@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:20.1.0-alpine as builder
 
 RUN apk add --update --no-cache openssl1.1-compat
 
@@ -12,7 +12,7 @@ RUN pnpm install --frozen-lockfile --prod
 
 COPY . .
 
-RUN pnpm ts:check && pnpm build
+RUN pnpm ts:check && pnpm build && pnpm storybook:build
 
 ENV NODE_ENV production
 
