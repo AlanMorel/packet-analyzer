@@ -1,4 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { ReactElement } from "react";
 import toast, { Toast } from "react-hot-toast";
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
     message: string;
 }
 
-const ToastContainer = (props: Props): JSX.Element => {
+const ToastContainer = (props: Props): ReactElement => {
     const { instance, Icon, message } = props;
 
     const dismiss = (): void => toast.dismiss(instance.id);

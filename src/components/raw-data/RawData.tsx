@@ -2,9 +2,9 @@
 
 import { useModalState } from "@/src/atoms/Modal";
 import { useStructureState } from "@/src/atoms/Structure";
-import { useMemo } from "react";
+import { ReactElement, useMemo } from "react";
 
-const JSONModal = (): JSX.Element => {
+const JSONModal = (): ReactElement => {
     const { structure, updateStructure } = useStructureState();
 
     const stringified = useMemo(() => {
@@ -23,7 +23,7 @@ const JSONModal = (): JSX.Element => {
     );
 };
 
-const RawData = (): JSX.Element => {
+const RawData = (): ReactElement => {
     const { openModal } = useModalState();
 
     const onTriggerClick = (): void => {

@@ -1,8 +1,9 @@
 import Input from "@/src/components/input/Input";
 import Outputs from "@/src/components/outputs/Outputs";
 import RightPanel from "@/src/components/right-panel/RightPanel";
+import { ReactElement } from "react";
 
-const Main = (): JSX.Element => {
+const Main = (): ReactElement => {
     return (
         <div>
             <Input />

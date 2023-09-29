@@ -1,7 +1,8 @@
 import Main from "@/src/components/main/Main";
 import { withMetadata } from "@/src/server/MetadataHelper";
+import { ReactElement } from "react";
 
-export default async function HomePage(): Promise<JSX.Element> {
+export default async function HomePage(): Promise<ReactElement> {
     return (
         <div className="app m-auto max-w-[70rem] p-8 text-center font-text">
             <h1 className="mb-6 font-header text-6xl text-[--contrast-black]">Packet Analyzer</h1>

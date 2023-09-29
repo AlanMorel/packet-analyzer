@@ -1,13 +1,14 @@
 import { atom, useAtom } from "jotai";
+import { ReactElement } from "react";
 
 type ModalState = {
-    content: JSX.Element;
+    content: ReactElement;
     open: boolean;
 };
 
 interface IModalState {
     modal: ModalState;
-    openModal: (content: JSX.Element) => void;
+    openModal: (content: ReactElement) => void;
     closeModal: () => void;
 }
 
@@ -27,7 +28,7 @@ export const useModalState = (): IModalState => {
         setModal(newModal);
     };
 
-    const openModal = (content: JSX.Element): void => {
+    const openModal = (content: ReactElement): void => {
         const newModal = {
             content,
             open: true

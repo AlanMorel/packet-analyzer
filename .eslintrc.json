@@ -62,5 +62,5 @@
         "no-prototype-builtins": 1,
         "prettier/prettier": ["error"]
     },
-    "ignorePatterns": [".next"]
+    "ignorePatterns": [".next", "*.js"]
 }

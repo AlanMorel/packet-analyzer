@@ -2,8 +2,9 @@
 
 import { useStructureState } from "@/src/atoms/Structure";
 import StructureButton from "@/src/components/structure-button/StructureButton";
+import { ReactElement } from "react";
 
-const StructureButtons = (): JSX.Element => {
+const StructureButtons = (): ReactElement => {
     const { addStructure } = useStructureState();
 
     return (

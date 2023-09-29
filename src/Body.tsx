@@ -1,14 +1,14 @@
 "use client";
 
 import Modal from "@/src/components/modal/Modal";
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 import { Toaster } from "react-hot-toast";
 
 interface Props {
     children: ReactNode;
 }
 
-export default function Body(props: Props): JSX.Element {
+export default function Body(props: Props): ReactElement {
     const { children } = props;
 
     return (

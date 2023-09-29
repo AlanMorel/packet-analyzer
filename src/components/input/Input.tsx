@@ -1,8 +1,9 @@
 "use client";
 
 import { useInputState } from "@/src/atoms/Input";
+import { ReactElement } from "react";
 
-const Input = (): JSX.Element => {
+const Input = (): ReactElement => {
     const { input, setInput } = useInputState();
 
     return (

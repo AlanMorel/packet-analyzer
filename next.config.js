@@ -1,10 +1,7 @@
 let nextConfig = {
     basePath: "/packet-analyzer",
     reactStrictMode: true,
-    swcMinify: true,
-    experimental: {
-        appDir: true
-    }
+    swcMinify: true
 };
 
 const configs = phase => {

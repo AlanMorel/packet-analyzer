@@ -3,9 +3,9 @@
 import { useInputState } from "@/src/atoms/Input";
 import { useStructureState } from "@/src/atoms/Structure";
 import { parsePacket } from "@/src/utils/PacketUtils";
-import { useMemo } from "react";
+import { ReactElement, useMemo } from "react";
 
-const Outputs = (): JSX.Element => {
+const Outputs = (): ReactElement => {
     const { input } = useInputState();
     const { structure } = useStructureState();
 

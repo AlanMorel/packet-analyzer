@@ -1,9 +1,9 @@
 "use client";
 
 import { useModalState } from "@/src/atoms/Modal";
-import { useEffect, useRef } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 
-const Modal = (): JSX.Element => {
+const Modal = (): ReactElement => {
     const { modal, closeModal } = useModalState();
 
     const modalRef = useRef<HTMLDivElement>(null);

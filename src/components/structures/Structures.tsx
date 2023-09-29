@@ -4,9 +4,9 @@ import { useStructureState } from "@/src/atoms/Structure";
 import UnitLabel from "@/src/components/unit-label/UnitLabel";
 import useSortable from "@/src/mixins/Sortable";
 import { Structure } from "@/src/utils/Interfaces";
-import { useRef } from "react";
+import { ReactElement, useRef } from "react";
 
-const Structures = (): JSX.Element => {
+const Structures = (): ReactElement => {
     const { structure, deleteStructure, swapStructures, onLabelRename } = useStructureState();
 
     const list = useRef<HTMLUListElement>(null);

@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 interface Props {
     unit: string;
 }
@@ -27,7 +29,7 @@ const getColorFromUnit = (unit: string): string => {
     return "";
 };
 
-const UnitLabel = (props: Props): JSX.Element => {
+const UnitLabel = (props: Props): ReactElement => {
     const { unit } = props;
 
     const backgroundColor = getColorFromUnit(unit.toLowerCase());

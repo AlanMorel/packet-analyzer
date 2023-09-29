@@ -2,7 +2,7 @@ import Body from "@/src/Body";
 import "@/src/globals.css";
 import "@/src/styles/base.scss";
 import { Inter } from "next/font/google";
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 interface Props {
     children: ReactNode;
@@ -13,7 +13,7 @@ const inter = Inter({
     variable: "--font-inter"
 });
 
-export default async function RootLayout(props: Props): Promise<JSX.Element> {
+export default async function RootLayout(props: Props): Promise<ReactElement> {
     const { children } = props;
 
     return (

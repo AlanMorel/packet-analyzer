@@ -1,9 +1,11 @@
+import { ReactElement } from "react";
+
 interface Props {
     label: string;
     onClick: () => void;
 }
 
-const StructureButton = (props: Props): JSX.Element => {
+const StructureButton = (props: Props): ReactElement => {
     const { label, onClick } = props;
 
     return (
