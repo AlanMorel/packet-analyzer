@@ -21,7 +21,7 @@ const Outputs = (): ReactElement => {
                     wrap="off"
                     value={packet}
                     key={packet}
-                    className="mb-4 box-border min-h-[20rem] w-full resize-y rounded border-0 bg-black bg-opacity-50 px-2 py-1 font-mono text-sm text-white outline-none"
+                    className="mb-4 box-border min-h-[20rem] w-full resize-y rounded border-0 bg-black/50 px-2 py-1 font-mono text-sm text-white outline-none"
                 />
             ))}
         </div>

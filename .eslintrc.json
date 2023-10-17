@@ -1,36 +1,17 @@
 {
-    "root": true,
-    "env": {
-        "node": true,
-        "es2021": true,
-        "jest": true,
-        "browser": true
-    },
     "globals": {
-        "page": true,
-        "browser": true,
-        "context": true,
-        "jestPuppeteer": true,
-        "JSX": "readonly",
-        "React": true
+        "JSX": true
     },
     "parser": "@typescript-eslint/parser",
-    "plugins": ["react", "import", "jsx-a11y", "@typescript-eslint", "security", "prettier", "eslint-plugin-storybook"],
+    "plugins": ["@typescript-eslint", "security", "prettier", "tailwindcss", "eslint-plugin-storybook"],
     "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:security/recommended",
+        "plugin:tailwindcss/recommended",
+        "prettier",
         "next/core-web-vitals",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
         "plugin:storybook/recommended"
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project": ["./tsconfig.json"]
-    },
     "rules": {
         "no-console": "warn",
         "no-debugger": "warn",
@@ -61,7 +42,10 @@
         "eol-last": "error",
         "no-undef": 1,
         "no-prototype-builtins": 1,
-        "prettier/prettier": ["error"]
+        "prettier/prettier": "error",
+        "tailwindcss/no-custom-classname": "warn",
+        "tailwindcss/enforces-shorthand": "error",
+        "tailwindcss/migration-from-tailwind-2": "error"
     },
     "ignorePatterns": [".next", "*.js"]
 }
