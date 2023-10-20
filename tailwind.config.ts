@@ -37,9 +37,9 @@ const config: Config = {
             },
             backgroundImage: {
                 "light-background":
-                    "url('/packet-analyzer/images/light-background.png'), linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%)",
+                    "url('~public/images/light-background.png'), linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%)",
                 "dark-background":
-                    "url('/packet-analyzer/images/dark-background.png'), linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%)"
+                    "url('~public/images/dark-background.png'), linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%)"
             },
             keyframes: {
                 "fade-out": {

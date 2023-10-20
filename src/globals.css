@@ -5,7 +5,7 @@
 @font-face {
     font-family: moranga;
     font-display: swap;
-    src: url("/packet-analyzer/fonts/moranga-regular.otf") format("opentype");
+    src: url("~public/fonts/moranga-regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
 }
