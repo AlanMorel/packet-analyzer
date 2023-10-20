@@ -4,13 +4,13 @@ import defaultTheme from "tailwindcss/defaultTheme";
 import { createThemes } from "tw-colors";
 
 const config: Config = {
-    darkMode: ["class", '[data-theme="dark"]'],
     content: ["./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
     plugins: [
         createThemes({
             light: {
                 white: colors.white,
                 black: colors.black,
+                slate: colors.slate,
                 darken05: "rgba(0, 0, 0, 0.05)",
                 darken15: "rgba(0, 0, 0, 0.15)",
                 darken35: "rgba(0, 0, 0, 0.35)",
@@ -19,6 +19,7 @@ const config: Config = {
             dark: {
                 white: colors.black,
                 black: colors.white,
+                slate: reverseObjectValues(colors.slate),
                 darken05: "rgba(255, 255, 255, 0.05)",
                 darken15: "rgba(255, 255, 255, 0.15)",
                 darken35: "rgba(255, 255, 255, 0.35)",
@@ -32,15 +33,27 @@ const config: Config = {
                 text: ["var(--font-inter)", "Open Sans", ...defaultTheme.fontFamily.sans],
                 header: ["moranga"]
             },
-            animation: {
-                enter: "fade-in 200ms ease-out, scale-up 200ms ease-out",
-                leave: "fade-out 150ms ease-in forwards, scale-down 150ms ease-in forwards"
-            },
             backgroundImage: {
                 "light-background":
                     "url('~public/images/light-background.png'), linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%)",
                 "dark-background":
                     "url('~public/images/dark-background.png'), linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%)"
+            },
+            animation: {
+                enter: "fade-in 200ms ease-out, scale-up 200ms ease-out",
+                leave: "fade-out 150ms ease-in forwards, scale-down 150ms ease-in forwards",
+                fade: "fade-in 200ms cubic-bezier(.41,.73,.51,1.02)",
+                "slide-in": "slide-in 400ms cubic-bezier(.41,.73,.51,1.02)",
+                "fade-in": "fade-in 200ms ease-out",
+                "fade-out": "fade-out 200ms ease-in",
+                "enter-centered": "fade-in 200ms ease-out, scale-centered 200ms ease-out",
+                "leave-centered": "fade-out 150ms ease-in, scale-centered-reverse 150ms ease-in"
+            },
+            transitionDuration: {
+                DEFAULT: "100ms",
+                fast: "650ms",
+                medium: "800ms",
+                slow: "950ms"
             },
             keyframes: {
                 "fade-out": {
@@ -82,6 +95,22 @@ const config: Config = {
                     "100%": {
                         transform: "translateY(0)"
                     }
+                },
+                "scale-centered": {
+                    "0%": {
+                        transform: "translate(-50%, -50%) scale(0.95)"
+                    },
+                    "100%": {
+                        transform: "translate(-50%, -50%) scale(1)"
+                    }
+                },
+                "scale-centered-reverse": {
+                    "0%": {
+                        transform: "translate(-50%, -50%) scale(1)"
+                    },
+                    "100%": {
+                        transform: "translate(-50%, -50%) scale(0.95)"
+                    }
                 }
             }
         }
@@ -89,3 +118,14 @@ const config: Config = {
 };
 
 export default config;
+
+function reverseObjectValues(inputObject: Record<string, any>): Record<string, any> {
+    const reversedValues = Object.values(inputObject).reverse();
+    const reversedObject: Record<string, any> = {};
+
+    Object.keys(inputObject).forEach((key, index) => {
+        reversedObject[key] = reversedValues[index];
+    });
+
+    return reversedObject;
+}

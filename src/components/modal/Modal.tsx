@@ -1,44 +1,40 @@
 "use client";
 
-import { useModalState } from "@/src/atoms/Modal";
-import { ReactElement, useEffect, useRef } from "react";
+import useModalState from "@/src/atoms/ModalAtom";
+import { cn } from "@/src/utils/ClassNamesHelper";
+import { XMarkIcon } from "@heroicons/react/24/solid";
+import { Close, Content, Overlay, Portal, Root } from "@radix-ui/react-dialog";
+import { ReactElement } from "react";
 
-const Modal = (): ReactElement => {
-    const { modal, closeModal } = useModalState();
-
-    const modalRef = useRef<HTMLDivElement>(null);
-
-    const clickOutsideModalHandler = (event: MouseEvent): void => {
-        if (event.target === modalRef.current) {
-            closeModal();
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener("click", clickOutsideModalHandler);
-
-        return function cleanup() {
-            window.removeEventListener("click", clickOutsideModalHandler);
-        };
-    });
-
-    const classes = modal.open
-        ? "visible scale-100 opacity-100 [transition:_visibility_0s_linear_0s,opacity_0.25s_0s,_transform_0.25s]"
-        : "invisible opacity-0 scale-[1.05] [transition:_visibility_0s_linear_0.25s,opacity_0.25s_0s,_transform_0.25s]";
+export default function Modal(): ReactElement {
+    const { modal, setOpenState } = useModalState();
 
     return (
-        <div className={`fixed left-0 top-0 h-full w-full bg-darken35 ${classes}`} ref={modalRef}>
-            <div className="absolute left-1/2 top-1/2 w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded bg-white p-4">
-                <span
-                    className="right-3 top-3 float-right h-6 w-6 cursor-pointer rounded bg-darken05 text-center transition hover:bg-darken15"
-                    onClick={closeModal}
+        <Root open={modal.open} onOpenChange={setOpenState}>
+            <Portal>
+                <Overlay className="fixed inset-0 z-20 bg-black/25 data-[state=closed]:animate-fade-out data-[state=open]:animate-fade-in" />
+                <Content
+                    className={cn(
+                        "fixed z-50",
+                        "box-content w-[95vw] max-w-lg rounded-xl px-8 py-6 shadow-xl md:w-full",
+                        "left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]",
+                        "bg-white",
+                        "focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75",
+                        "data-[state=closed]:animate-leave-centered data-[state=open]:animate-enter-centered"
+                    )}
                 >
-                    ×
-                </span>
-                {modal.content}
-            </div>
-        </div>
+                    <div>{modal.content}</div>
+                    <Close
+                        className={cn(
+                            "group absolute right-6 top-5 inline-flex h-8 w-8 items-center justify-center rounded-md p-1 font-bold text-slate-400 hover:bg-slate-200 hover:text-black",
+                            "focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
+                        )}
+                    >
+                        <XMarkIcon className="h-5 w-5 text-slate-400 group-hover:text-black" />
+                        <span className="sr-only">Close</span>
+                    </Close>
+                </Content>
+            </Portal>
+        </Root>
     );
-};
-
-export default Modal;
+}
