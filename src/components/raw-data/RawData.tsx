@@ -15,7 +15,7 @@ const JSONModal = (): ReactElement => {
         <>
             <div className="mb-4 text-left text-lg font-bold">JSON Data</div>
             <textarea
-                className="border--darken05 mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full resize-y  rounded  border bg-darken05 px-2 py-1 font-mono text-xs outline-none"
+                className="mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full resize-y rounded  border  border-darken05 bg-darken05 px-2 py-1 font-mono text-xs outline-none"
                 value={stringified}
                 onInput={(event): void => updateStructure(event)}
             />

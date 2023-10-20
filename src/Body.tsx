@@ -14,7 +14,10 @@ export default function Body(props: Props): ReactElement {
     const isDarkMode = useDarkMode();
 
     return (
-        <body className="m-0 font-sans text-black" data-theme={`${isDarkMode ? "dark" : "light"}`}>
+        <body
+            className={`m-0 min-h-screen bg-light-background bg-left-bottom bg-repeat-x font-sans text-black dark:bg-dark-background`}
+            data-theme={`${isDarkMode ? "dark" : "light"}`}
+        >
             {children}
             <Toaster position="bottom-center" />
             <Modal />

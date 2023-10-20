@@ -1,6 +1,5 @@
 import Body from "@/src/Body";
 import "@/src/globals.css";
-import "@/src/styles/base.scss";
 import { Inter } from "next/font/google";
 import { ReactElement, ReactNode } from "react";
 

@@ -11,13 +11,17 @@ const config: Config = {
                 white: colors.white,
                 black: colors.black,
                 darken05: "rgba(0, 0, 0, 0.05)",
-                darken15: "rgba(0, 0, 0, 0.15)"
+                darken15: "rgba(0, 0, 0, 0.15)",
+                darken35: "rgba(0, 0, 0, 0.35)",
+                lighten95: "rgba(255, 255, 255, 0.95)"
             },
             dark: {
                 white: colors.black,
                 black: colors.white,
                 darken05: "rgba(255, 255, 255, 0.05)",
-                darken15: "rgba(255, 255, 255, 0.15)"
+                darken15: "rgba(255, 255, 255, 0.15)",
+                darken35: "rgba(255, 255, 255, 0.35)",
+                lighten95: "rgba(0, 0, 0, 0.35)"
             }
         })
     ],
@@ -30,6 +34,12 @@ const config: Config = {
             animation: {
                 enter: "fade-in 200ms ease-out, scale-up 200ms ease-out",
                 leave: "fade-out 150ms ease-in forwards, scale-down 150ms ease-in forwards"
+            },
+            backgroundImage: {
+                "light-background":
+                    "url('/packet-analyzer/images/light-background.png'), linear-gradient(180deg, rgb(225 224 255) 0%, rgb(214 236 248) 20%, rgb(181 226 252) 100%)",
+                "dark-background":
+                    "url('/packet-analyzer/images/dark-background.png'), linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%)"
             },
             keyframes: {
                 "fade-out": {
