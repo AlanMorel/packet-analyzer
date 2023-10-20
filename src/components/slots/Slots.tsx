@@ -1,6 +1,6 @@
 "use client";
 
-import { useSlotsState } from "@/src/atoms/Slot";
+import useSlotsState from "@/src/atoms/SlotAtom";
 import { Slot } from "@/src/utils/Interfaces";
 import { ReactElement } from "react";
 

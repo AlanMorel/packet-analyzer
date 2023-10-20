@@ -15,7 +15,7 @@ interface IStructure {
     swapStructures: (index1: number, index2: number) => void;
 }
 
-export const useStructureState = (): IStructure => {
+const useStructureState = (): IStructure => {
     const [structure, setStructure] = useAtom(structureAtom);
 
     const addStructure = (unit: UnitTypes): void => {
@@ -72,3 +72,5 @@ export const useStructureState = (): IStructure => {
         updateStructure
     };
 };
+
+export default useStructureState;

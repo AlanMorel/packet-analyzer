@@ -1,6 +1,6 @@
 "use client";
 
-import { useInputState } from "@/src/atoms/Input";
+import useInputState from "@/src/atoms/InputAtom";
 import { ReactElement } from "react";
 
 const Input = (): ReactElement => {

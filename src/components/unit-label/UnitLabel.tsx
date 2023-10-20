@@ -36,7 +36,7 @@ const UnitLabel = (props: Props): ReactElement => {
 
     return (
         <div
-            className={`text-white ${backgroundColor} my-[0.15rem] mr-1 flex min-w-[3.25rem] items-center justify-center rounded px-1 text-xs`}
+            className={`my-[0.15rem] mr-1 flex min-w-[3.25rem] items-center justify-center rounded px-1 text-xs text-white ${backgroundColor}`}
         >
             {unit}
         </div>

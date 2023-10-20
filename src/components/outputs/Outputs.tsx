@@ -1,7 +1,7 @@
 "use client";
 
-import { useInputState } from "@/src/atoms/Input";
-import { useStructureState } from "@/src/atoms/Structure";
+import useInputState from "@/src/atoms/InputAtom";
+import useStructureState from "@/src/atoms/StructureAtom";
 import { parsePacket } from "@/src/utils/PacketUtils";
 import { ReactElement, useMemo } from "react";
 

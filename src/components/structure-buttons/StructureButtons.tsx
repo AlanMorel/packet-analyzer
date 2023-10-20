@@ -1,6 +1,6 @@
 "use client";
 
-import { useStructureState } from "@/src/atoms/Structure";
+import useStructureState from "@/src/atoms/StructureAtom";
 import StructureButton from "@/src/components/structure-button/StructureButton";
 import { ReactElement } from "react";
 

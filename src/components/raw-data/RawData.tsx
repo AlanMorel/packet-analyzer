@@ -1,7 +1,7 @@
 "use client";
 
-import { useModalState } from "@/src/atoms/Modal";
-import { useStructureState } from "@/src/atoms/Structure";
+import useModalState from "@/src/atoms/ModalAtom";
+import useStructureState from "@/src/atoms/StructureAtom";
 import { ReactElement, useMemo } from "react";
 
 const JSONModal = (): ReactElement => {
