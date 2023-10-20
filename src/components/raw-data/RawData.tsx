@@ -13,9 +13,9 @@ const JSONModal = (): ReactElement => {
 
     return (
         <>
-            <div className="mb-4 text-left text-lg font-bold text-[--contrast-black]">JSON Data</div>
+            <div className="mb-4 text-left text-lg font-bold">JSON Data</div>
             <textarea
-                className="mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full resize-y rounded  border  border-[--darken-contrast-05] bg-[--darken-contrast-05] px-2 py-1 font-mono text-xs text-[--contrast-black] outline-none"
+                className="border--darken05 mb-1 mt-2 box-border h-[40rem] max-h-[80vh] w-full resize-y  rounded  border bg-darken05 px-2 py-1 font-mono text-xs outline-none"
                 value={stringified}
                 onInput={(event): void => updateStructure(event)}
             />
@@ -33,7 +33,7 @@ const RawData = (): ReactElement => {
     return (
         <div className="mb-1">
             <button
-                className="mt-2 cursor-pointer rounded border-0 bg-[--darken-contrast-05] px-3 py-1 text-center text-xs text-[--contrast-black] transition hover:bg-[--darken-contrast-15]"
+                className="mt-2 cursor-pointer rounded border-0 bg-darken05 px-3 py-1 text-center text-xs transition hover:bg-darken15"
                 onClick={onTriggerClick}
             >
                 View and Modify JSON

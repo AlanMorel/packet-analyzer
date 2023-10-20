@@ -10,7 +10,7 @@ const StructureButton = (props: Props): ReactElement => {
 
     return (
         <button
-            className="m-1 cursor-pointer rounded border border-[--light-border-color] bg-transparent px-1 text-sm text-[--contrast-black] hover:bg-[--darken-contrast-05] hover:text-[--contrast-black]"
+            className="m-1 cursor-pointer rounded border border-[--light-border-color] bg-transparent px-1 text-sm hover:bg-darken05 hover:text-black"
             onClick={onClick}
         >
             + {label}

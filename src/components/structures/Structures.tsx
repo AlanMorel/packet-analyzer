@@ -14,7 +14,7 @@ const Structures = (): ReactElement => {
     const { onDragStart, onDragOver } = useSortable(list, swapStructures);
 
     return (
-        <ul className="border-t border-[--darken-contrast-05] pt-2" ref={list}>
+        <ul className="border-t border-darken05 pt-2" ref={list}>
             {structure.map((struct: Structure, index: number) => (
                 <li
                     className="group relative flex cursor-grab px-0 py-1 active:cursor-grabbing"
@@ -26,13 +26,13 @@ const Structures = (): ReactElement => {
                     <UnitLabel unit={struct.unit.toLowerCase()} />
                     <input
                         type="text"
-                        className="mr-2 w-full rounded border border-solid border-transparent bg-transparent px-1 py-[0.1rem] text-sm outline-none group-hover:bg-[--darken-contrast-05]"
+                        className="mr-2 w-full rounded border border-solid border-transparent bg-transparent px-1 py-[0.1rem] text-sm outline-none group-hover:bg-darken05"
                         value={struct.label}
                         onInput={(event): void => onLabelRename(event, index)}
                     />
                     <div className="hidden group-hover:flex">
                         <button
-                            className="mr-1 cursor-pointer rounded border  border-none border-[--contrast-black] bg-transparent px-2 text-sm text-[--contrast-black] last:mr-0 hover:bg-[--darken-contrast-05]"
+                            className="mr-1 cursor-pointer rounded border  border-none border-black bg-transparent px-2 text-sm last:mr-0 hover:bg-darken05"
                             onClick={(): void => deleteStructure(index)}
                         >
                             ×

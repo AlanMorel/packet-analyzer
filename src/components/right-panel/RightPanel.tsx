@@ -7,10 +7,10 @@ import { ReactElement } from "react";
 const RightPanel = (): ReactElement => {
     return (
         <ul className="max-w-[18rem]">
-            <li className="mb-4 rounded bg-[--light-component-background-color] px-2 py-1 text-[--contrast-black]">
+            <li className="mb-4 rounded bg-[--light-component-background-color] px-2 py-1">
                 <Slots />
             </li>
-            <li className="mb-4 rounded bg-[--light-component-background-color] px-2 py-1 text-[--contrast-black]">
+            <li className="mb-4 rounded bg-[--light-component-background-color] px-2 py-1">
                 <StructureButtons />
                 <Structures />
                 <RawData />
