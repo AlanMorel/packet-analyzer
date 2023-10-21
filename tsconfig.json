@@ -13,6 +13,7 @@
         "incremental": true,
         "forceConsistentCasingInFileNames": true,
         "jsx": "preserve",
+        "baseUrl": "./",
         "paths": {
             "@/*": ["./*"]
         },
