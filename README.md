@@ -1,5 +1,7 @@
 # Packet Analyzer
 
+Install node, pnpm, clone this repository, then install the dependencies
+
 ```sh
 git clone https://github.com/AlanMorel/packet-analyzer
 ```

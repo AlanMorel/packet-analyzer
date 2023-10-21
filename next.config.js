@@ -1,4 +1,4 @@
-let nextConfig = {
+let baseConfigs = {
     basePath: "/packet-analyzer",
     reactStrictMode: true,
     swcMinify: true
@@ -6,14 +6,14 @@ let nextConfig = {
 
 const configs = phase => {
     if (phase !== "phase-development-server") {
-        nextConfig = {
-            ...nextConfig,
+        baseConfigs = {
+            ...baseConfigs,
             output: "export",
             distDir: "dist"
         };
     }
 
-    return nextConfig;
+    return baseConfigs;
 };
 
 export default configs;

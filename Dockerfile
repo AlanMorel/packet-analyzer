@@ -1,4 +1,4 @@
-FROM node:20.1.0-alpine as builder
+FROM node:20.1.0-alpine AS builder
 
 RUN apk add --update --no-cache openssl1.1-compat
 
@@ -16,7 +16,7 @@ RUN pnpm ts:check && pnpm build && pnpm storybook:build
 
 ENV NODE_ENV production
 
-FROM nginx:alpine as base
+FROM nginx:alpine AS base
 
 ARG ENV
 

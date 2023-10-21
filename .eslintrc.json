@@ -50,6 +50,7 @@
         "eol-last": "error",
         "no-undef": 1,
         "no-prototype-builtins": 1,
+        "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "export" }],
         "prettier/prettier": "error",
         "tailwindcss/no-custom-classname": "warn",
         "tailwindcss/enforces-shorthand": "error",

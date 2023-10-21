@@ -1,4 +1,4 @@
-import Body from "@/src/Body";
+import Body from "@/src/components/Body";
 import "@/src/globals.css";
 import { Inter } from "next/font/google";
 import { ReactElement, ReactNode } from "react";

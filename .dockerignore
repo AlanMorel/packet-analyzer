@@ -1,5 +1,5 @@
 .github
-dist
+.vscode
 node_modules
 
 .git
@@ -10,4 +10,5 @@ docker-compose.yml
 README.md
 
 # app-specific
+dist
 coverage

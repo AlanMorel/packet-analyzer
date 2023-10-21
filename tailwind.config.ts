@@ -4,7 +4,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 import { createThemes } from "tw-colors";
 
 const config: Config = {
-    content: ["./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+    content: ["./app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
     plugins: [
         createThemes({
             light: {
@@ -39,6 +39,12 @@ const config: Config = {
                 "dark-background":
                     "url('~public/images/dark-background.png'), linear-gradient(180deg, rgb(17 15 45) 0%, rgb(34 32 79) 20%, rgb(46 44 82) 100%)"
             },
+            transitionDuration: {
+                DEFAULT: "100ms",
+                fast: "650ms",
+                medium: "800ms",
+                slow: "950ms"
+            },
             animation: {
                 enter: "fade-in 200ms ease-out, scale-up 200ms ease-out",
                 leave: "fade-out 150ms ease-in forwards, scale-down 150ms ease-in forwards",
@@ -48,12 +54,6 @@ const config: Config = {
                 "fade-out": "fade-out 200ms ease-in",
                 "enter-centered": "fade-in 200ms ease-out, scale-centered 200ms ease-out",
                 "leave-centered": "fade-out 150ms ease-in, scale-centered-reverse 150ms ease-in"
-            },
-            transitionDuration: {
-                DEFAULT: "100ms",
-                fast: "650ms",
-                medium: "800ms",
-                slow: "950ms"
             },
             keyframes: {
                 "fade-out": {
