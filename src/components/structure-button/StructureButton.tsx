@@ -5,7 +5,7 @@ interface Props {
     onClick: () => void;
 }
 
-const StructureButton = (props: Props): ReactElement => {
+export default function StructureButton(props: Props): ReactElement {
     const { label, onClick } = props;
 
     return (
@@ -16,6 +16,4 @@ const StructureButton = (props: Props): ReactElement => {
             + {label}
         </button>
     );
-};
-
-export default StructureButton;
+}

@@ -1,3 +1,4 @@
+import { tw } from "@/src/utils/ClassNamesHelper";
 import { ReactElement } from "react";
 
 interface Props {
@@ -29,18 +30,19 @@ const getColorFromUnit = (unit: string): string => {
     return "";
 };
 
-const UnitLabel = (props: Props): ReactElement => {
+export default function UnitLabel(props: Props): ReactElement {
     const { unit } = props;
 
     const backgroundColor = getColorFromUnit(unit.toLowerCase());
 
     return (
         <div
-            className={`my-[0.15rem] mr-1 flex min-w-[3.25rem] items-center justify-center rounded px-1 text-xs text-white ${backgroundColor}`}
+            className={tw(
+                "my-[0.15rem] mr-1 flex min-w-[3.25rem] items-center justify-center rounded px-1 text-xs text-white",
+                backgroundColor
+            )}
         >
             {unit}
         </div>
     );
-};
-
-export default UnitLabel;
+}

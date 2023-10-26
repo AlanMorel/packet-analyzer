@@ -3,38 +3,19 @@
         "JSX": true
     },
     "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "@typescript-eslint",
-        "security",
-        "prettier",
-        "tailwindcss",
-        "eslint-plugin-storybook",
-        "no-relative-import-paths"
-    ],
+    "plugins": ["@typescript-eslint", "security", "prettier", "tailwindcss", "no-relative-import-paths"],
     "extends": [
         "plugin:@typescript-eslint/recommended",
         "plugin:security/recommended",
         "plugin:tailwindcss/recommended",
         "prettier",
-        "next/core-web-vitals",
-        "plugin:storybook/recommended"
+        "next/core-web-vitals"
     ],
-    "ignorePatterns": [".next", "*.js"],
+    "ignorePatterns": [".next", "**.js"],
     "rules": {
         "no-console": "warn",
         "no-debugger": "warn",
-        "@typescript-eslint/explicit-function-return-type": ["error"],
-        "@typescript-eslint/no-inferrable-types": "off",
-        "@typescript-eslint/explicit-member-accessibility": ["error"],
-        "@typescript-eslint/no-explicit-any": "warn",
         "indent": "off",
-        "@typescript-eslint/indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
         "semi": 2,
         "quotes": [
             2,
@@ -50,16 +31,27 @@
         "eol-last": "error",
         "no-undef": 1,
         "no-prototype-builtins": 1,
-        "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "export" }],
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/explicit-member-accessibility": "error",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
         "prettier/prettier": "error",
-        "tailwindcss/no-custom-classname": "warn",
-        "tailwindcss/enforces-shorthand": "error",
-        "tailwindcss/migration-from-tailwind-2": "error",
+        "padding-line-between-statements": ["error", { "blankLine": "always", "prev": "*", "next": "export" }],
         "no-relative-import-paths/no-relative-import-paths": [
             "error",
             {
                 "prefix": "@"
             }
-        ]
+        ],
+        "tailwindcss/no-custom-classname": "error",
+        "tailwindcss/enforces-shorthand": "error",
+        "tailwindcss/migration-from-tailwind-2": "error"
     }
 }

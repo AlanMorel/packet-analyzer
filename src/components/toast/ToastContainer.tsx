@@ -1,3 +1,4 @@
+import { tw } from "@/src/utils/ClassNamesHelper";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ForwardRefExoticComponent, ReactElement, SVGProps } from "react";
 import toast, { Toast } from "react-hot-toast";
@@ -8,7 +9,7 @@ interface Props {
     message: string;
 }
 
-const ToastContainer = (props: Props): ReactElement => {
+export default function ToastContainer(props: Props): ReactElement {
     const { instance, Icon, message } = props;
 
     const dismiss = (): void => toast.dismiss(instance.id);
@@ -18,7 +19,10 @@ const ToastContainer = (props: Props): ReactElement => {
     return (
         <div
             id="toast-default"
-            className={`flex w-full max-w-sm items-center rounded-lg bg-neutral-900 p-4 text-slate-100 shadow ${animateClass}`}
+            className={tw(
+                "flex w-full max-w-sm items-center rounded-lg bg-neutral-900 p-4 text-slate-100 shadow",
+                animateClass
+            )}
             role="alert"
         >
             <div className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-white">
@@ -36,6 +40,4 @@ const ToastContainer = (props: Props): ReactElement => {
             </button>
         </div>
     );
-};
-
-export default ToastContainer;
+}
