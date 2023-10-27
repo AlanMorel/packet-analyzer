@@ -3,6 +3,8 @@ import "@/src/globals.css";
 import { Inter } from "next/font/google";
 import { ReactElement, ReactNode } from "react";
 
+export { viewport } from "@/src/server/MetadataHelper";
+
 interface Props {
     children: ReactNode;
 }
