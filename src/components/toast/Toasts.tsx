@@ -1,7 +1,7 @@
 import ToastContainer from "@/src/components/toast/ToastContainer";
-import { CheckCircleIcon } from "@heroicons/react/24/solid";
+import { CheckCircle2 } from "lucide-react";
 import toast from "react-hot-toast";
 
 export const showToast = (message: string): void => {
-    toast.custom(instance => <ToastContainer instance={instance} Icon={CheckCircleIcon} message={message} />);
+    toast.custom(instance => <ToastContainer instance={instance} Icon={CheckCircle2} message={message} />);
 };

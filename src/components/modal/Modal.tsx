@@ -2,8 +2,8 @@
 
 import useModalState from "@/src/atoms/ModalAtom";
 import { tw } from "@/src/utils/ClassNamesHelper";
-import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Close, Content, Overlay, Portal, Root } from "@radix-ui/react-dialog";
+import { XIcon } from "lucide-react";
 import { ReactElement } from "react";
 
 export default function Modal(): ReactElement {
@@ -24,7 +24,7 @@ export default function Modal(): ReactElement {
                             "group absolute right-6 top-5 inline-flex h-8 w-8 items-center justify-center rounded-md p-1 font-bold text-slate-400 hover:bg-slate-200 hover:text-black focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
                         )}
                     >
-                        <XMarkIcon className="h-5 w-5 text-slate-400 group-hover:text-black" />
+                        <XIcon className="h-5 w-5 text-slate-400 group-hover:text-black" />
                         <span className="sr-only">Close</span>
                     </Close>
                 </Content>

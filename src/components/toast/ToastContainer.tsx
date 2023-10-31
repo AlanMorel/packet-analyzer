@@ -1,5 +1,5 @@
 import { tw } from "@/src/utils/ClassNamesHelper";
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { XIcon } from "lucide-react";
 import { ForwardRefExoticComponent, ReactElement, SVGProps } from "react";
 import toast, { Toast } from "react-hot-toast";
 
@@ -36,7 +36,7 @@ export default function ToastContainer(props: Props): ReactElement {
                 aria-label="Close"
                 onClick={dismiss}
             >
-                <XMarkIcon />
+                <XIcon />
             </button>
         </div>
     );
