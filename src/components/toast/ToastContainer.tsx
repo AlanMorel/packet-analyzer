@@ -36,7 +36,7 @@ export default function ToastContainer(props: Props): ReactElement {
                 aria-label="Close"
                 onClick={dismiss}
             >
-                <XIcon />
+                <XIcon className="h-full" />
             </button>
         </div>
     );
