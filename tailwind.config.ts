@@ -4,6 +4,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 import { createThemes } from "tw-colors";
 
 const config: Config = {
+    darkMode: ["class", "[data-theme='dark']"],
     content: ["./app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
     plugins: [
         createThemes({

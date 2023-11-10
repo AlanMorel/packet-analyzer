@@ -2,6 +2,7 @@
 
 import useModalState from "@/src/atoms/ModalAtom";
 import useStructureState from "@/src/atoms/StructureAtom";
+import ThemeSwitcher from "@/src/components/ThemeSwitcher";
 import { ReactElement, useMemo } from "react";
 
 const JSONModal = (): ReactElement => {
@@ -31,13 +32,14 @@ const RawData = (): ReactElement => {
     };
 
     return (
-        <div className="mb-1">
+        <div className="mb-1 mt-2 flex items-center justify-between">
             <button
-                className="mt-2 cursor-pointer rounded border-0 bg-darken05 px-3 py-1 text-center text-xs transition hover:bg-darken15"
+                className="cursor-pointer rounded border-0 bg-darken05 px-3 py-1 text-center text-sm transition hover:bg-darken15"
                 onClick={onTriggerClick}
             >
                 View and Modify JSON
             </button>
+            <ThemeSwitcher />
         </div>
     );
 };
