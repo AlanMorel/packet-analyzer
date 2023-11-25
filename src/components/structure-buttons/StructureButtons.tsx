@@ -1,11 +1,11 @@
 "use client";
 
-import useStructureState from "@/src/atoms/StructureAtom";
+import useStructure from "@/src/atoms/StructureAtom";
 import StructureButton from "@/src/components/structure-button/StructureButton";
 import { ReactElement } from "react";
 
 export default function StructureButtons(): ReactElement {
-    const { addStructure } = useStructureState();
+    const { addStructure } = useStructure();
 
     return (
         <div className="mt-2 flex flex-wrap justify-center pb-2">

@@ -1,13 +1,13 @@
 "use client";
 
-import useModalState from "@/src/atoms/ModalAtom";
+import useModal from "@/src/atoms/ModalAtom";
 import tw from "@/src/utils/TailwindHelper";
 import { Close, Content, Overlay, Portal, Root } from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
 import { ReactElement } from "react";
 
 export default function Modal(): ReactElement {
-    const { modal, setOpenState } = useModalState();
+    const { modal, setOpenState } = useModal();
 
     return (
         <Root open={modal.open} onOpenChange={setOpenState}>

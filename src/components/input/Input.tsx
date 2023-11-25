@@ -1,10 +1,10 @@
 "use client";
 
-import useInputState from "@/src/atoms/InputAtom";
+import useInput from "@/src/atoms/InputAtom";
 import { ReactElement } from "react";
 
 export default function Input(): ReactElement {
-    const { input, setInput } = useInputState();
+    const { input, setInput } = useInput();
 
     return (
         <div className="mb-4">

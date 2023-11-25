@@ -1,13 +1,13 @@
 "use client";
 
-import useInputState from "@/src/atoms/InputAtom";
-import useStructureState from "@/src/atoms/StructureAtom";
+import useInput from "@/src/atoms/InputAtom";
+import useStructure from "@/src/atoms/StructureAtom";
 import { parsePacket } from "@/src/utils/PacketUtils";
 import { ReactElement, useMemo } from "react";
 
 export default function Outputs(): ReactElement {
-    const { input } = useInputState();
-    const { structure } = useStructureState();
+    const { input } = useInput();
+    const { structure } = useStructure();
 
     const output = useMemo(() => {
         return input.split("\n").map((packet: string) => parsePacket(packet, structure));

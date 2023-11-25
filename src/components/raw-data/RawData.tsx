@@ -1,12 +1,12 @@
 "use client";
 
-import useModalState from "@/src/atoms/ModalAtom";
-import useStructureState from "@/src/atoms/StructureAtom";
+import useModal from "@/src/atoms/ModalAtom";
+import useStructure from "@/src/atoms/StructureAtom";
 import ThemeSwitcher from "@/src/components/ThemeSwitcher";
 import { ReactElement, useMemo } from "react";
 
 const JSONModal = (): ReactElement => {
-    const { structure, updateStructure } = useStructureState();
+    const { structure, updateStructure } = useStructure();
 
     const stringified = useMemo(() => {
         return JSON.stringify(structure, null, 4);
@@ -25,7 +25,7 @@ const JSONModal = (): ReactElement => {
 };
 
 export default function RawData(): ReactElement {
-    const { openModal } = useModalState();
+    const { openModal } = useModal();
 
     const onTriggerClick = (): void => {
         openModal(<JSONModal />);

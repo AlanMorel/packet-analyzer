@@ -1,11 +1,11 @@
 "use client";
 
-import useSlotsState from "@/src/atoms/SlotAtom";
+import useSlots from "@/src/atoms/SlotAtom";
 import { Slot } from "@/src/utils/Interfaces";
 import { ReactElement } from "react";
 
 export default function Slots(): ReactElement {
-    const { slots, renameSlot, loadSlot, saveSlot } = useSlotsState();
+    const { slots, renameSlot, loadSlot, saveSlot } = useSlots();
 
     return (
         <ul>

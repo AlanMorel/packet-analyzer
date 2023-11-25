@@ -1,5 +1,5 @@
-import useInputState from "@/src/atoms/InputAtom";
-import useStructureState from "@/src/atoms/StructureAtom";
+import useInput from "@/src/atoms/InputAtom";
+import useStructure from "@/src/atoms/StructureAtom";
 import { showToast } from "@/src/components/toast/Toasts";
 import { defaultSlots, MAX_SLOT_SIZE } from "@/src/utils/Defaults";
 import { Slot } from "@/src/utils/Interfaces";
@@ -39,10 +39,10 @@ interface ISlot {
     renameSlot: (event: FormEvent<EventTarget>, index: number) => void;
 }
 
-function useSlotsState(): ISlot {
+export default function useSlots(): ISlot {
     const [slots, setSlots] = useAtom(slotState);
-    const { structure, setStructure } = useStructureState();
-    const { input, setInput } = useInputState();
+    const { structure, setStructure } = useStructure();
+    const { input, setInput } = useInput();
 
     function loadSlot(index: number): void {
         const slotsJSON = localStorage.getItem("slots") as string;
@@ -91,5 +91,3 @@ function useSlotsState(): ISlot {
 
     return { slots, setSlots, loadSlot, saveSlot, renameSlot };
 }
-
-export default useSlotsState;
