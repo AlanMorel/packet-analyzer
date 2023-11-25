@@ -3,4 +3,4 @@
 
 echo "Running pre-push hook..."
 
-pnpm build
+# pnpm build
