@@ -31,7 +31,7 @@ export default function ToastContainer(props: Props): ReactElement {
             <div className="mx-3 text-sm font-normal">{message}</div>
             <button
                 type="button"
-                className="-m-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-neutral-800 p-1.5 text-white hover:bg-slate-100 hover:text-gray-900 focus:ring-2 focus:ring-slate-300"
+                className="-m-1.5 ml-auto inline-flex h-8 w-8 rounded-lg bg-neutral-800 p-1.5 text-white transition hover:bg-slate-100 hover:text-gray-900 focus:ring-2 focus:ring-slate-300"
                 data-dismiss-target="#toast-default"
                 aria-label="Close"
                 onClick={dismiss}
