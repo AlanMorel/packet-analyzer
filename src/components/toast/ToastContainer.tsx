@@ -1,4 +1,4 @@
-import { tw } from "@/src/utils/ClassNamesHelper";
+import tw from "@/src/utils/TailwindHelper";
 import { XIcon } from "lucide-react";
 import { ForwardRefExoticComponent, ReactElement, SVGProps } from "react";
 import toast, { Toast } from "react-hot-toast";
