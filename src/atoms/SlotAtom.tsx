@@ -8,7 +8,7 @@ import { FormEvent } from "react";
 
 const storage = typeof window !== "undefined" ? localStorage : undefined;
 
-const getSlots = (): Slot[] => {
+function getSlots(): Slot[] {
     const slotsDefault = defaultSlots();
 
     if (!storage) {
@@ -25,7 +25,7 @@ const getSlots = (): Slot[] => {
     storage.setItem("slots", slotsJSON);
 
     return slotsDefault;
-};
+}
 
 type SlotState = Slot[];
 
@@ -39,12 +39,12 @@ interface ISlot {
     renameSlot: (event: FormEvent<EventTarget>, index: number) => void;
 }
 
-const useSlotsState = (): ISlot => {
+function useSlotsState(): ISlot {
     const [slots, setSlots] = useAtom(slotState);
     const { structure, setStructure } = useStructureState();
     const { input, setInput } = useInputState();
 
-    const loadSlot = (index: number): void => {
+    function loadSlot(index: number): void {
         const slotsJSON = localStorage.getItem("slots") as string;
         const slotsData = JSON.parse(slotsJSON);
 
@@ -56,9 +56,9 @@ const useSlotsState = (): ISlot => {
         setStructure(newSlots[index].structure);
 
         showToast(`Slot ${index + 1} "${newSlots[index].label}" loaded.`);
-    };
+    }
 
-    const saveSlot = (index: number): void => {
+    function saveSlot(index: number): void {
         const newSlot = {
             label: slots[index].label,
             input: input,
@@ -72,9 +72,9 @@ const useSlotsState = (): ISlot => {
         localStorage.setItem("slots", slotsJSON);
 
         showToast(`Slot ${index + 1} "${newSlots[index].label}" saved.`);
-    };
+    }
 
-    const renameSlot = (event: FormEvent<EventTarget>, index: number): void => {
+    function renameSlot(event: FormEvent<EventTarget>, index: number): void {
         const target = event.target as HTMLInputElement;
         const label = target.value;
 
@@ -87,9 +87,9 @@ const useSlotsState = (): ISlot => {
         newSlots[index] = newSlot;
 
         setSlots(newSlots);
-    };
+    }
 
     return { slots, setSlots, loadSlot, saveSlot, renameSlot };
-};
+}
 
 export default useSlotsState;

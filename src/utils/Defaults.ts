@@ -5,7 +5,7 @@ export const defaultPacket =
 
 export const MAX_SLOT_SIZE = 5;
 
-export const defaultSlots = (): Slot[] => {
+export function defaultSlots(): Slot[] {
     const slotsDefault = [];
     for (let i = 0; i < MAX_SLOT_SIZE; i++) {
         slotsDefault.push({
@@ -15,7 +15,7 @@ export const defaultSlots = (): Slot[] => {
         });
     }
     return slotsDefault;
-};
+}
 
 export const defaultStructure: Structure[] = [
     {

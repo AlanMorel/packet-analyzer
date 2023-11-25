@@ -3,7 +3,7 @@
 import useInputState from "@/src/atoms/InputAtom";
 import { ReactElement } from "react";
 
-const Input = (): ReactElement => {
+export default function Input(): ReactElement {
     const { input, setInput } = useInputState();
 
     return (
@@ -17,6 +17,4 @@ const Input = (): ReactElement => {
             />
         </div>
     );
-};
-
-export default Input;
+}

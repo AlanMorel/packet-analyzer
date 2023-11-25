@@ -4,7 +4,7 @@ import StructureButtons from "@/src/components/structure-buttons/StructureButton
 import Structures from "@/src/components/structures/Structures";
 import { ReactElement } from "react";
 
-const RightPanel = (): ReactElement => {
+export default function RightPanel(): ReactElement {
     return (
         <ul className="max-w-[18rem]">
             <li className="mb-4 rounded bg-lighten95 px-2 py-1">
@@ -17,6 +17,4 @@ const RightPanel = (): ReactElement => {
             </li>
         </ul>
     );
-};
-
-export default RightPanel;
+}

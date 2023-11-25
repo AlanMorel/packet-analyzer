@@ -6,7 +6,7 @@ import useSortable from "@/src/mixins/Sortable";
 import { Structure } from "@/src/utils/Interfaces";
 import { ReactElement, useRef } from "react";
 
-const Structures = (): ReactElement => {
+export default function Structures(): ReactElement {
     const { structure, deleteStructure, swapStructures, onLabelRename } = useStructureState();
 
     const list = useRef<HTMLUListElement>(null);
@@ -42,6 +42,4 @@ const Structures = (): ReactElement => {
             ))}
         </ul>
     );
-};
-
-export default Structures;
+}

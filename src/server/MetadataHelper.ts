@@ -19,14 +19,14 @@ export type MetadataProps = {
     searchParams: any;
 };
 
-export const withMetadata = (baseMetadata: BaseMetadata): Metadata => {
+export function withMetadata(baseMetadata: BaseMetadata): Metadata {
     return buildMetadata(baseMetadata);
-};
+}
 
 const favicon = `${Config.app.subpath}/favicons/favicon.ico`;
 const image = `${Config.app.subpath}/images/meta-image.png`;
 
-const buildMetadata = (base: BaseMetadata): Metadata => {
+function buildMetadata(base: BaseMetadata): Metadata {
     return {
         metadataBase: new URL(`https://${Config.app.domain}`),
         title: base.title,
@@ -108,4 +108,4 @@ const buildMetadata = (base: BaseMetadata): Metadata => {
             }
         }
     };
-};
+}

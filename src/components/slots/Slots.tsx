@@ -4,7 +4,7 @@ import useSlotsState from "@/src/atoms/SlotAtom";
 import { Slot } from "@/src/utils/Interfaces";
 import { ReactElement } from "react";
 
-const Slots = (): ReactElement => {
+export default function Slots(): ReactElement {
     const { slots, renameSlot, loadSlot, saveSlot } = useSlotsState();
 
     return (
@@ -36,6 +36,4 @@ const Slots = (): ReactElement => {
             ))}
         </ul>
     );
-};
-
-export default Slots;
+}

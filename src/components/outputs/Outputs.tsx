@@ -5,7 +5,7 @@ import useStructureState from "@/src/atoms/StructureAtom";
 import { parsePacket } from "@/src/utils/PacketUtils";
 import { ReactElement, useMemo } from "react";
 
-const Outputs = (): ReactElement => {
+export default function Outputs(): ReactElement {
     const { input } = useInputState();
     const { structure } = useStructureState();
 
@@ -26,6 +26,4 @@ const Outputs = (): ReactElement => {
             ))}
         </div>
     );
-};
-
-export default Outputs;
+}

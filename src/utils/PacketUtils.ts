@@ -1,20 +1,20 @@
 import { Structure } from "@/src/utils/Interfaces";
 
-export const littleEndianHexStringToDecimal = (string: string): number => {
+export function littleEndianHexStringToDecimal(string: string): number {
     const len = string.length;
     let bigEndianHexString = "0x";
     for (let i = 0; i < len / 2; i++) {
         bigEndianHexString += string.substring(len - (i + 1) * 2, len - i * 2);
     }
     return parseInt(bigEndianHexString);
-};
+}
 
-export const bigEndianHexStringToDecimal = (hex: string): number => {
+export function bigEndianHexStringToDecimal(hex: string): number {
     const decimal = littleEndianHexStringToDecimal(hex);
     return ((decimal & 0xff) << 8) | ((decimal >> 8) & 0xff);
-};
+}
 
-export const IntToFloat32 = (int: number): number => {
+export function IntToFloat32(int: number): number {
     if (int > 0 || int < 0) {
         const sign = int >>> 31 ? -1 : 1;
         let exp = ((int >>> 23) & 0xff) - 127;
@@ -28,9 +28,9 @@ export const IntToFloat32 = (int: number): number => {
     }
 
     return 0;
-};
+}
 
-export const hex2a = (hex: string): string => {
+export function hex2a(hex: string): string {
     let str = "";
     for (let i = 0; i < hex.length; i += 2) {
         const v = parseInt(hex.substring(i, i + 2), 16);
@@ -39,17 +39,17 @@ export const hex2a = (hex: string): string => {
         }
     }
     return str;
-};
+}
 
-export const addSpacesToPacket = (packet: string): string => {
+export function addSpacesToPacket(packet: string): string {
     const match = packet.match(/.{1,2}/g);
     if (match) {
         return match.join(" ");
     }
     return "";
-};
+}
 
-export const parsePacket = (packet: string, structure: Structure[]): string => {
+export function parsePacket(packet: string, structure: Structure[]): string {
     packet = packet.replace(/\s/g, "");
     let results = "";
     let index = 0;
@@ -129,4 +129,4 @@ export const parsePacket = (packet: string, structure: Structure[]): string => {
     }
 
     return results;
-};
+}

@@ -24,7 +24,7 @@ const JSONModal = (): ReactElement => {
     );
 };
 
-const RawData = (): ReactElement => {
+export default function RawData(): ReactElement {
     const { openModal } = useModalState();
 
     const onTriggerClick = (): void => {
@@ -42,6 +42,4 @@ const RawData = (): ReactElement => {
             <ThemeSwitcher />
         </div>
     );
-};
-
-export default RawData;
+}

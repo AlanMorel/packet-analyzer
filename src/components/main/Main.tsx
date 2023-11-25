@@ -3,7 +3,7 @@ import Outputs from "@/src/components/outputs/Outputs";
 import RightPanel from "@/src/components/right-panel/RightPanel";
 import { ReactElement } from "react";
 
-const Main = (): ReactElement => {
+export default function Main(): ReactElement {
     return (
         <div>
             <Input />
@@ -13,6 +13,4 @@ const Main = (): ReactElement => {
             </div>
         </div>
     );
-};
-
-export default Main;
+}

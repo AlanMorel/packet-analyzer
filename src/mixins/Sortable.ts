@@ -5,21 +5,21 @@ interface ISortable {
     onDragOver: (e: MouseEvent<HTMLLIElement>) => void;
 }
 
-const useSortable = (list: RefObject<HTMLUListElement>, swap: (index1: number, index2: number) => void): ISortable => {
+function useSortable(list: RefObject<HTMLUListElement>, swap: (index1: number, index2: number) => void): ISortable {
     let currentIndex: number = -1;
 
-    const getSwapPoints = (): number[] => {
+    function getSwapPoints(): number[] {
         const children = list.current?.children || [];
         const points = Array.from(children).map(child => child.getBoundingClientRect().y);
 
         return points;
-    };
+    }
 
-    const onDragStart = (e: MouseEvent<HTMLLIElement>): void => {
+    function onDragStart(e: MouseEvent<HTMLLIElement>): void {
         currentIndex = getHoverIndex(e.clientY);
-    };
+    }
 
-    const getHoverIndex = (y: number): number => {
+    function getHoverIndex(y: number): number {
         const points = getSwapPoints();
         if (y < points[0]) {
             return 0;
@@ -31,9 +31,9 @@ const useSortable = (list: RefObject<HTMLUListElement>, swap: (index1: number, i
         }
 
         return index - 1;
-    };
+    }
 
-    const onDragOver = (e: MouseEvent<HTMLLIElement>): void => {
+    function onDragOver(e: MouseEvent<HTMLLIElement>): void {
         e.preventDefault();
 
         const newIndex = getHoverIndex(e.clientY);
@@ -52,12 +52,12 @@ const useSortable = (list: RefObject<HTMLUListElement>, swap: (index1: number, i
         }
 
         currentIndex = newIndex;
-    };
+    }
 
     return {
         onDragStart,
         onDragOver
     };
-};
+}
 
 export default useSortable;

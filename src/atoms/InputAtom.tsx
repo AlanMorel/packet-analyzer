@@ -8,10 +8,10 @@ interface IInput {
     setInput: (value: string) => void;
 }
 
-const useInputState = (): IInput => {
+function useInputState(): IInput {
     const [input, setInput] = useAtom(inputAtom);
 
     return { input, setInput };
-};
+}
 
 export default useInputState;

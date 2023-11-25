@@ -15,25 +15,25 @@ interface IStructure {
     swapStructures: (index1: number, index2: number) => void;
 }
 
-const useStructureState = (): IStructure => {
+function useStructureState(): IStructure {
     const [structure, setStructure] = useAtom(structureAtom);
 
-    const addStructure = (unit: UnitTypes): void => {
+    function addStructure(unit: UnitTypes): void {
         const newValue: Structure = {
             unit: unit,
             label: `unk ${unit}`
         };
         const newStructure = [...structure, newValue];
         setStructure(newStructure);
-    };
+    }
 
-    const deleteStructure = (index: number): void => {
+    function deleteStructure(index: number): void {
         const newStructure = [...structure];
         newStructure.splice(index, 1);
         setStructure(newStructure);
-    };
+    }
 
-    const onLabelRename = (event: FormEvent<EventTarget>, index: number): void => {
+    function onLabelRename(event: FormEvent<EventTarget>, index: number): void {
         const target = event.target as HTMLInputElement;
         const label = target.value;
 
@@ -46,21 +46,21 @@ const useStructureState = (): IStructure => {
         newStructureArray[index] = newStucture;
 
         setStructure(newStructureArray);
-    };
+    }
 
-    const updateStructure = (event: FormEvent<EventTarget>): void => {
+    function updateStructure(event: FormEvent<EventTarget>): void {
         const target = event.target as HTMLInputElement;
         const value = target.value;
         setStructure(JSON.parse(value));
-    };
+    }
 
-    const swapStructures = (index1: number, index2: number): void => {
+    function swapStructures(index1: number, index2: number): void {
         const newStructure = [...structure];
         const temp = newStructure[index1];
         newStructure[index1] = newStructure[index2];
         newStructure[index2] = temp;
         setStructure(newStructure);
-    };
+    }
 
     return {
         structure,
@@ -71,6 +71,6 @@ const useStructureState = (): IStructure => {
         onLabelRename,
         updateStructure
     };
-};
+}
 
 export default useStructureState;

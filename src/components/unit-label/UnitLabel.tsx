@@ -5,7 +5,7 @@ interface Props {
     unit: string;
 }
 
-const getColorFromUnit = (unit: string): string => {
+function getColorFromUnit(unit: string): string {
     switch (unit) {
         case "opcode":
             return "bg-red-500";
@@ -28,7 +28,7 @@ const getColorFromUnit = (unit: string): string => {
             return "bg-teal-500";
     }
     return "";
-};
+}
 
 export default function UnitLabel(props: Props): ReactElement {
     const { unit } = props;
